@@ -5,6 +5,18 @@
 @endsection
 
 @section('content')
+    <script>
+        function confirmDelete(event) {
+            event.preventDefault();
+            var form = event.target.form;
+            if (confirm("Are you sure you want to delete this user?")) {
+                form.submit();
+            }
+        }
+    </script>
+    @if (session('success'))
+        <div>{{ session('success') }}</div>
+    @endif
     <h3>Welcome to user's page!</h3>
     <button><a href="/users/create">Create New User</a></button>
     <h1>Users List</h1>
@@ -31,7 +43,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                            <form action="{{ route('users.destroy', $user->id) }}" onclick="confirmDelete(event)" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit">Delete</button>
