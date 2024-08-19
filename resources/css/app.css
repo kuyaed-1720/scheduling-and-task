@@ -11,10 +11,14 @@ body {
 }
 .sidebar{
 	align-items: inherit;
-	margin-left: 1vw;
+	margin-left: 1px;
 }
 
  a {
+	display: block;
 	margin-top: 5px;
+	background-color: #50B498;
 	color: black;
+	width:  120px;
+	height: 30px;
  }
