@@ -21,7 +21,7 @@
         <a href="/home">Home</a>
         <a href="/task">Task</a>
         <a href="/schedule">Schedule</a>
-        <a href="/users/create">User</a>
+        <a href="/users">User</a>
         <a href="/setting">Settings</a>
     </nav>
     @yield('content')
