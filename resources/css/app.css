@@ -57,13 +57,17 @@ header{
 	align-items: center;
  }
 
- button{
-	width: px;
+ table button{
+	width: 30%;
  }
 
  .user_table{
 	
-	width: 75%;
+	width: 100%;
+	height: 80%;
 	border: 1px solid black;
 
  }
+#calendar{
+	width: 60%;
+}
