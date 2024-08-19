@@ -8,7 +8,7 @@
     <h3>Welcome to user's page!</h3>
     <button><a href="/users/create">Create New User</a></button>
     <h1>Users List</h1>
-    <table style="border='1'">
+    <table class="user_table">
         <thead>
             <tr>
                 <th>ID</th>
