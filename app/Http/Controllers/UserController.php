@@ -10,13 +10,19 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+        $userCount = $users->count();
+        return view('users.index', compact('users', 'userCount'));
     }
 
     // Show the form for creating a new user
     public function create()
     {
         return view('users.create');
+    }
+
+    public function delete()
+    {
+        
     }
 
     // Store a newly created user in the database
