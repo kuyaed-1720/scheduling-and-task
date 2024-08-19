@@ -9,3 +9,14 @@ body {
 	color: black;
 	text-align: center;
 }
+.sidebar{
+	color: #79e0ee;
+	align-items: inherit;
+	margin-left: 1vw;
+}
+
+ a {
+	color: #9ca986;
+	background-color: #008dda;
+	box-sizing: border-box;
+ }
