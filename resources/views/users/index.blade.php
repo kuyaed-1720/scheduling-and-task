@@ -23,6 +23,8 @@
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
+                        <td><button><a href="/users/edit">Edit</a></button></td>
+                        <td><button><a href="/users/delete">Delete</a></button></td>
                     </tr>
                 @endforeach
             @else

@@ -20,6 +20,11 @@ class UserController extends Controller
         return view('users.create');
     }
 
+    public function delete()
+    {
+        
+    }
+
     // Store a newly created user in the database
     public function store(Request $request)
     {
