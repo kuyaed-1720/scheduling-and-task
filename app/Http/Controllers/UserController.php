@@ -20,9 +20,12 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function delete()
+    public function destroy($id)
     {
-        
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
     }
 
     // Store a newly created user in the database
