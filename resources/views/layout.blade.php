@@ -8,6 +8,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
+
+    {{-- header and title --}}
     <header class="navbar bg-body-tertiary">
         <h3>Scheduling and Task Management System</h3>
         <div class="container-fluid">
@@ -17,13 +19,22 @@
             </form>
         </div>
     </header>
-    <nav class="sidebar">
-        <a href="/home">Home</a>
-        <a href="/task">Task</a>
-        <a href="/schedule">Schedule</a>
-        <a href="/users">User</a>
-        <a href="/setting">Settings</a>
-    </nav>
-    @yield('content')
+    
+    <div class="main">
+        {{-- navigation panel --}}
+        <nav class="sidebar">
+            <a href="/home">Home</a>
+            <a href="/tasks">Task</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/users">User</a>
+            <a href="/settings">Settings</a>
+        </nav>
+
+        {{-- main content --}}
+        <main>
+            @yield('content')
+        </main>
+
+    </div>
 </body>
 </html>
