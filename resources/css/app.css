@@ -5,12 +5,11 @@
 }
 
 body {
-	background-color: #9ca986;
-	color: black;
+	background-color: #1a3636;
+	color: #88dd66;
 	text-align: center;
 }
 .sidebar{
-	color: #79e0ee;
 	align-items: inherit;
 	margin-left: 1vw;
 }
