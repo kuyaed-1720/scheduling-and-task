@@ -7,6 +7,11 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return view('users.index');
+    }
+
     // Show the form for creating a new user
     public function create()
     {
