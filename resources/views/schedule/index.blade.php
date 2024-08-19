@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('title')
-    Users
+    Schedule
 @endsection
 
 @section('content')
-
+    
 @endsection
