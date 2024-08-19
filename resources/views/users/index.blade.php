@@ -17,8 +17,11 @@
     @if (session('success'))
         <div>{{ session('success') }}</div>
     @endif
-    <h3>Welcome to user's page!</h3>
-    <button><a href="/users/create">Create New User</a></button>
+    <form action="{{ route('users.create') }}" method="GET">
+        @csrf
+        @method('GET')
+        <button type="submit">Create New User</button>
+    </form>
     <h1>Users List</h1>
     <table class="user_table">
         <thead>
@@ -33,12 +36,12 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <td ondblclick="editCell(this, {{ $user->id }}, 'name')">{{ $user->name }}</td>
+                        <td ondblclick="editCell(this, {{ $user->id }}, 'email')">{{ $user->email }}</td>
                         <td>
                             <form action="{{ route('users.edit', $user->id) }}" method="POST">
                                 @csrf
-                                @method('PUT')
+                                @method('GET')
                                 <button type="submit">Edit</button>
                             </form>
                         </td>
@@ -56,4 +59,37 @@
             @endif
         </tbody>
     </table>
+
+    <script>
+        function editCell(cell, userId, field) {
+            const originalContent = cell.innerHTML;
+            cell.innerHTML = `<input type="text" value="${originalContent}" onblur="saveCell(this, ${userId}, '${field}', '${originalContent}')">`;
+            cell.querySelector('input').focus();
+        }
+
+        function saveCell(input, userId, field, originalContent) {
+            const newValue = input.value;
+            const cell = input.parentElement;
+            cell.innerHTML = newValue || originalContent;
+
+            // Send AJAX request to update the value in the database
+            fetch(`/update-cell`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    id: userId,
+                    field: field,
+                    value: newValue
+                })
+            }).then(response => response.json())
+              .then(data => {
+                  if (!data.success) {
+                      cell.innerHTML = originalContent; // Revert to original content if update fails
+                  }
+              });
+        }
+    </script>
 @endsection

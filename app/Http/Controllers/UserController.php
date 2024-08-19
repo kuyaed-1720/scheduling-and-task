@@ -72,4 +72,13 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
+    public function updateCell(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->{$request->field} = $request->value;
+        $success = $user->save();
+
+        return response()->json(['success' => $success]);
+    }
+
 }

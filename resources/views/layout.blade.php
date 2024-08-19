@@ -32,6 +32,9 @@
 
         {{-- main content --}}
         <main>
+            {{-- @if (!Request::is('/') && !Request::is('/home'))
+                <button onclick="history.back()">Go Back</button>
+            @endif --}}
             @yield('content')
         </main>
 
