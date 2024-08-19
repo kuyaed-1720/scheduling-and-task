@@ -36,9 +36,9 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                            <form action="{{ route('users.edit', $user->id) }}" method="POST">
                                 @csrf
-                                @method('DELETE')
+                                @method('PUT')
                                 <button type="submit">Edit</button>
                             </form>
                         </td>
