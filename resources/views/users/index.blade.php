@@ -22,7 +22,7 @@
         @method('GET')
         <button type="submit">Create New User</button>
     </form>
-    <h1>Users List</h1>
+    <h3>Users List</h3>
     <table class="user_table">
         <thead>
             <tr>
