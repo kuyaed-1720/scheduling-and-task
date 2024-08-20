@@ -30,11 +30,11 @@
     <div class="main">
         {{-- navigation panel --}}
         <nav class="sidebar">
-            <a href="/home">Home</a>
-            <a href="/tasks">Task</a>
-            <a href="/schedule">Schedule</a>
-            <a href="/users">User</a>
-            <a href="/settings">Settings</a>
+            <a class="nav-btn" href="/home">Home</a>
+            <a class="nav-btn" href="/tasks">Task</a>
+            <a class="nav-btn" href="/schedule">Schedule</a>
+            <a class="nav-btn" href="/users">User</a>
+            <a class="nav-btn" href="/settings">Settings</a>
         </nav>
 
         {{-- main content --}}
