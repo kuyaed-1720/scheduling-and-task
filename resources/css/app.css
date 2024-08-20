@@ -69,7 +69,7 @@ header{
  }
 
  .user_table{
-	
+	margin-bottom: 5px;
 	width: 80%;
 	height: 85%;
 	color: black;
@@ -100,6 +100,14 @@ td button{
 }
 
 .user_name , .user_email , .user_pwd , .user_confrm{
-width: 20%;
-color: #F6E96B;
+width: 100%;
+color: #79e00e;
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+.create-btn{
+	background-color: #5F6F65;
+	color: white;
+	margin-top: 10px;
 }
