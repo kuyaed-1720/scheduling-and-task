@@ -21,3 +21,4 @@ Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.de
 // Schedule
 // Route::get('/schedule', [ScheduleController::class, 'index'])->name('users.schedule');
 Route::get('/schedule', [EventController::class, 'index'])->name('schedule.index');
+Route::post('/save-event', [EventController::class, 'saveEvent']);
