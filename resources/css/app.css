@@ -62,22 +62,29 @@ header{
 	margin: 2% 6%;
 	display: contents;
 	justify-content: space-between;
+	background-color: #5F6F65;
  }
 
  .user_table{
 	
-	width: 82%;
+	width: 80%;
 	height: 85%;
-	border: 1px solid black;
-	display: table-cell;
-	table-layout: fixed;
 	color: black;
  }
 
  table tr{
-	background-color: #9cdba6;
+	background-color: #50B498;
 	margin: 0 2%;
  }
 #calendar{
 	width: 60%;
+}
+
+td{
+	width: 10%;
+	margin: 2% 6%;
+}
+td button{
+	color: #D10363;
+	
 }
