@@ -98,3 +98,8 @@ td button{
 	padding: 2px;
 	align-content: center
 }
+
+.user_name , .user_email , .user_pwd , .user_confrm{
+width: 20%;
+color: #F6E96B;
+}
