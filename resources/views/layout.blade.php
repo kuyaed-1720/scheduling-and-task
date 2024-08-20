@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @if (Route::currentRouteName('schedule'))
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        {{-- <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
-        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script> --}}
-        {{-- <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.8/index.global.min.js'></script> --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
