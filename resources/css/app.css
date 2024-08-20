@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	
 }
 
 body {
@@ -40,13 +41,15 @@ header{
 	align-items: center;
 }
 
+
  a {
 	display: block;
 	margin-top: 5px;
-	background-color: #50B498;
+	background-color: #88dd66;
 	color: black;
-	width:  120px;
+	width:  110px;
 	height: 30px;
+	border-radius: 20px;
  }
 
  main{
@@ -59,25 +62,28 @@ header{
 
  table button{
 	width: 100%;
-	margin: 2% 6%;
+	margin: 2% 2%;
 	display: contents;
 	justify-content: space-between;
 	background-color: #5F6F65;
  }
 
  .user_table{
-	
+	margin-bottom: 5px;
 	width: 80%;
 	height: 85%;
 	color: black;
  }
 
  table tr{
-	background-color: #50B498;
+	background-color: #50b498;
 	margin: 0 2%;
  }
 #calendar{
-	width: 60%;
+	width: 90%;
+	height: 5%;
+	background-color: #473c33;
+	padding: 2px 3px 2px 3px;
 }
 
 td{
@@ -85,6 +91,24 @@ td{
 	margin: 2% 6%;
 }
 td button{
-	color: #D10363;
-	
+	color: #ff9100;
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+	height: 25%;
+	padding: 2px;
+	align-content: center
+}
+
+.user_name , .user_email , .user_pwd , .user_confrm{
+width: 100%;
+color: #79e00e;
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+.create-btn{
+	background-color: #5F6F65;
+	color: white;
+	margin-top: 10px;
 }
