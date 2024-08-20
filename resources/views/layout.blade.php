@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @if (Route::currentRouteName('schedule'))
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    @endif
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    @vite(['resources/sass/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
     <title>@yield('title')</title>
 </head>
 <body>
 
     {{-- header and title --}}
-    <header class="navbar bg-body-tertiary">
+    <header class="">
         <h3>Scheduling and Task Management System</h3>
-        <div class="container-fluid">
+        <div class="">
             <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>

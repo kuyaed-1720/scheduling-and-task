@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-// use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\EventController;
 
 // Home
 Route::get('/', function () { return view('home'); });
@@ -19,7 +17,4 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 // Schedule
-// Route::get('/schedule', [ScheduleController::class, 'index'])->name('users.schedule');
-Route::get('/schedule', [EventController::class, 'index'])->name('schedule.index');
-Route::post('/save-event', [EventController::class, 'saveEvent']);
-Route::post('/update-event', [EventController::class, 'updateEvent']);
+Route::get('/schedule', function() {return view('schedule.index'); });
