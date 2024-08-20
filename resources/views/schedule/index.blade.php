@@ -6,6 +6,14 @@
 
 @section('content')
 <script>
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
   document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
       var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -31,8 +39,8 @@
                         success: function(response) {
                             alert('Event saved successfully!');
                         },
-                        error: function() {
-                            alert('There was an error saving the event.');
+                        error: function(xhr) {
+                            alert('There was an error saving the event: ' + xhr.responseText);
                         }
                     });
                 }
@@ -41,11 +49,6 @@
       calendar.render();
   });
 
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
 </script>
 
 <div id="calendar"></div>
