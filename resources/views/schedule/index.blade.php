@@ -1,55 +1,9 @@
 @extends('layout')
 
 @section('title')
-    Schedule
+	Schedule
 @endsection
 
 @section('content')
-<script>
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          events: @json($events),
-          dateClick: function(info) {
-                var title = prompt('Enter Event Title:');
-                var description = prompt('Enter Event Description:');
-                if (title && description) {
-                    var eventData = {
-                        title: title,
-                        description: description,
-                        start: info.dateStr,
-                        end: info.dateStr
-                    };
-                    calendar.addEvent(eventData);
-
-                    // Save event to the database
-                    $.ajax({
-                        url: '/save-event',
-                        method: 'POST',
-                        data: eventData,
-                        success: function(response) {
-                            alert('Event saved successfully!');
-                        },
-                        error: function(xhr) {
-                            alert('There was an error saving the event: ' + xhr.responseText);
-                        }
-                    });
-                }
-            }
-      });
-      calendar.render();
-  });
-
-</script>
-
 <div id="calendar"></div>
 @endsection
