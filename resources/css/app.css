@@ -81,8 +81,9 @@ header{
  }
 #calendar{
 	width: 90%;
-	height: 20%;
-	
+	height: 5%;
+	background-color: #473c33;
+	padding: 2px 3px 2px 3px;
 }
 
 td{
