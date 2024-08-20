@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    @vite(['resources/sass/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>@yield('title')</title>
 </head>
 <body>
@@ -27,13 +27,14 @@
         <nav class="sidebar">
             <a class="nav-btn" href="/home">Home</a>
             <a class="nav-btn" href="/tasks">Task</a>
-            <a class="nav-btn" href="/schedule">Schedule</a>
+            <a class="nav-btn" href="/events">Events</a>
             <a class="nav-btn" href="/users">User</a>
             <a class="nav-btn" href="/settings">Settings</a>
         </nav>
 
         {{-- main content --}}
         <main>
+			{{-- back button --}}
             @if (!Request::is('/') && !Request::is('home'))
                 <button id="back" onclick="history.back()">Go Back</button>
             @endif
