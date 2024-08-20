@@ -30,6 +30,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Action</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -45,8 +46,7 @@
                                 @method('GET')
                                 <button type="submit">Edit</button>
                             </form>
-                        </td>
-                        <td>
+                       
                             <form action="{{ route('users.destroy', $user->id) }}" onclick="confirmDelete(event)" method="POST">
                                 @csrf
                                 @method('DELETE')
