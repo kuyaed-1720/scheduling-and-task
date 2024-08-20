@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @if (Route::currentRouteName('schedule'))
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>@yield('title')</title>
 </head>
@@ -32,9 +36,9 @@
 
         {{-- main content --}}
         <main>
-            {{-- @if (!Request::is('/') && !Request::is('/home'))
+            @if (!Request::is('/') && !Request::is('home'))
                 <button onclick="history.back()">Go Back</button>
-            @endif --}}
+            @endif
             @yield('content')
         </main>
 
