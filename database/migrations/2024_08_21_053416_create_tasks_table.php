@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->enum('priority', ['low', 'medium', 'high']);
+            $table->dateTime('due');
+            $table->boolean('completed')->default(false);
             $table->timestamps();
         });
     }
