@@ -1,20 +1,25 @@
-@echo off
-REM Navigate to the project directory
-cd /d C:\path\to\your\laravel\project
+name: Deploy Laravel Application
 
-REM Pull the latest changes from GitHub
-git pull origin main
+on:
+  push:
+    branches:
+      - main
 
-REM Install/update composer dependencies
-composer install --no-interaction --prefer-dist --optimize-autoloader
+jobs:
+  deploy:
+    runs-on: windows-latest
 
-REM Run database migrations
-php artisan migrate --force
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-REM Seed the database
-php artisan db:seed --force
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
 
-REM Clear and cache configurations
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Run deployment script
+        run: ./scripts/deploy.bat
