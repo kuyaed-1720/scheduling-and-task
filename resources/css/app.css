@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	
+	
 }
 
 html,body{
@@ -120,9 +121,6 @@ header{
 	background-color: #6482ad;
 }
 
-table{
-	position: absolute;
-}
 
 td button{
 	display: inline;
