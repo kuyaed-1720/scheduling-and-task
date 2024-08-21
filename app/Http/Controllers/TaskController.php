@@ -9,7 +9,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::where('completed', false)->orderBy('priority', 'desc')->orderBy('due_date')->get();
+        $tasks = Task::where('completed', false)->orderBy('priority', 'desc')->orderBy('due')->get();
 
         return view('tasks.index', compact('tasks'));
     }

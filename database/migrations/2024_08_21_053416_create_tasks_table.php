@@ -19,6 +19,7 @@ return new class extends Migration
             $table->dateTime('due');
             $table->boolean('completed')->default(false);
             $table->timestamps();
+            $table->timestamp('completed_at')->nullable()->default(null);
         });
     }
 
