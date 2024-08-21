@@ -1,3 +1,4 @@
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -97,28 +98,35 @@ header{
 	width: 80%;
 	height: 85%;
 	color: black;
+	table-layout: fixed;
+	min-width: 800px;
+
+	td{
+		background-color: #5F6F65;
+		width: 10%;
+		height: 4vh;
+		vertical-align: middle;
+	}
  }
 
  table tr{
-	background-color: #697565;
+	background-color: #d9d9d9;
 	
  }
+ 
 #calendar{
 	width: 90%;
 	height: 97%;
 	background-color: #6482ad;
 }
 
-td{
-	width: 10%;
-	height: 2vh;
+table{
+	position: absolute;
 }
+
 td button{
-	color: #ff9100;
-	display: flex;
-	flex-direction: column;
-	width: fit-content;
-	align-content: center
+	display: inline;
+	width: 58px;
 }
 
 .user_name , .user_email , .user_pwd , .user_confrm{

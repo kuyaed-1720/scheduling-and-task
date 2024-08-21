@@ -26,12 +26,10 @@
     <table class="user_table">
         <thead>
             <tr>
-                
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Action</th>
-                
+                <th>Action</th>  
             </tr>
         </thead>
         <tbody>
