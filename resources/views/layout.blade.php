@@ -12,7 +12,7 @@
 <body>
 
     {{-- header and title --}}
-    <header class="">
+    <header>
         <h3>Scheduling and Task Management System</h3>
         <div class="">
             <form class="d-flex" role="search">
