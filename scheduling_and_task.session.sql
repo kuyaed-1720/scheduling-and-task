@@ -9,8 +9,8 @@ INSERT INTO tasks (
 		updated_at
 	)
 values (
-		'Task 132',
-		'Descejdogierhgoi',
+		'Task 137yu7652',
+		'5y464y6t645t',
 		'high',
 		'2024-08-20',
 		0,
