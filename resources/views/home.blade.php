@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    Welcome to Scheduling and Task Management System
+    <h1> Welcome to Scheduling and Task Management System </h1>
 @endsection
