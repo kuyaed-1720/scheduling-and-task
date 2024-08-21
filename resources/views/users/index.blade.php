@@ -35,30 +35,29 @@
             </tr>
         </thead>
         <tbody>
-            @if ($userCount > 0)
-                @foreach ($users as $user)
-                    <tr>
-                        <td>{{ $user->id }}</td>
-                        <td ondblclick="editCell(this, {{ $user->id }}, 'name')">{{ $user->name }}</td>
-                        <td ondblclick="editCell(this, {{ $user->id }}, 'email')">{{ $user->email }}</td>
-                        <td>
-                            <form action="{{ route('users.edit', $user->id) }}" method="POST">
-                                @csrf
-                                @method('GET')
-                                <button type="submit">Edit</button>
-                            </form>
-                       
-                            <form action="{{ route('users.destroy', $user->id) }}" onclick="confirmDelete(event)" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            @else
+            @if ($userCount == 0)
                 <div class="none">No users yet</div>
             @endif
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->id }}</td>
+                    <td ondblclick="editCell(this, {{ $user->id }}, 'name')">{{ $user->name }}</td>
+                    <td ondblclick="editCell(this, {{ $user->id }}, 'email')">{{ $user->email }}</td>
+                    <td>
+                        <form action="{{ route('users.edit', $user->id) }}" method="POST">
+                            @csrf
+                            @method('GET')
+                            <button type="submit">Edit</button>
+                        </form>
+                    
+                        <form action="{{ route('users.destroy', $user->id) }}" onclick="confirmDelete(event)" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 
