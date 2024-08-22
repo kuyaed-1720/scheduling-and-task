@@ -1,3 +1,4 @@
+/scripts
 /.phpunit.cache
 /node_modules
 /public/build
@@ -5,6 +6,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/scripts
 .env
 .env.backup
 .env.production
