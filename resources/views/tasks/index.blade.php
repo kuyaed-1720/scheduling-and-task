@@ -33,7 +33,13 @@
                 @foreach ($tasks as $task)
                     <tr>
                         <td>{{ $task->title }}</td>
-                        <td>{{ $task->description }}</td>
+                        <td>
+                            @if ($task->description)
+                                {{ $task->description }}
+                            @else
+                                <small>No description set</small>
+                            @endif
+                        </td>
                         <td>{{ $task->priority }}</td>
                         <td>{{ $task->due }}</td>
                         <td>
