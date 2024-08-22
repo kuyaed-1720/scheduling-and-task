@@ -43,12 +43,12 @@
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
                             </form>
-                            {{-- @if (!$task->completed)
+                            @if (!$task->completed)
                                 <form action="{{ route('tasks.complete', $task->id) }}" method="POST" style="display: inline;">
                                     @csrf
                                     <button class="btn btn-warning btn-sm" type="submit">Complete</button>
                                 </form>
-                            @endif --}}
+                            @endif
                         </td>
                     </tr>
                 @endforeach
