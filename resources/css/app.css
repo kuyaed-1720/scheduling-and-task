@@ -184,6 +184,11 @@ text-align: left;
 		font-size: 24px;
 	}
 }
+
+.fa {
+	margin: 0 5px;
+}
+
 :root {
     --fc-border-color: black;
     --fc-daygrid-event-dot-width: 5px;
