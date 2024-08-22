@@ -10,8 +10,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     {{-- bootstrapv cdn --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <title>@yield('title')</title>
 </head>
@@ -31,11 +31,11 @@
     <div class="main">
         {{-- navigation panel --}}
         <nav class="sidebar">
-            <a class="nav-btn" href="/home">Home</a>
-            <a class="nav-btn" href="/tasks">Task</a>
-            <a class="nav-btn" href="/events">Events</a>
-            <a class="nav-btn" href="/users">User</a>
-            <a class="nav-btn" href="/settings">Settings</a>
+            <a class="nav-btn btn btn-primary btn-sm" href="/home">Home</a>
+            <a class="nav-btn btn btn-primary btn-sm" href="/tasks">Task</a>
+            <a class="nav-btn btn btn-primary btn-sm" href="/events">Events</a>
+            <a class="nav-btn btn btn-primary btn-sm" href="/users">User</a>
+            <a class="nav-btn btn btn-primary btn-sm" href="/settings">Settings</a>
         </nav>
 
         {{-- main content --}}
