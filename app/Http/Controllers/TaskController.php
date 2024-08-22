@@ -76,7 +76,7 @@ class TaskController extends Controller
             'completed_at' => now(),
         ]);
         
-        return redirect()->route('tasks.index')->with('success', 'Task completed successfully! Yeeyyy!');
+        return redirect()->route('tasks.index')->with('success', 'Task completed successfully!');
     }
 
     public function tasksshow()
