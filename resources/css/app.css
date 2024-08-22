@@ -11,12 +11,11 @@ html,body{
 }
 
 body {
-	background-color: white;
-	color:#d9d9d9;
+	background-color: #f5f5f5;
 	text-align: center;
-	font-family: 'Courier New', Courier, monospace;
-	font-size: medium;
-	font-weight: 900;
+	/* font-family: 'Courier New', Courier, monospace; */
+	/* font-size: medium; */
+	/* font-weight: 900; */
 	
 }
 
@@ -25,13 +24,7 @@ header, .sidebar{
 	display: flex;
 }
 
-h3{
-	font-weight: 800;
-	color: #000000;
-}
-
 h1{
-	color: #000000;
 	margin-top: 5px;
 	background-color: #d9d9d9;
 }
@@ -53,15 +46,19 @@ h1{
 img{
 	height: 100%;
 	width: 100%;
-	
 }
 
-main{
-	background-color: #f5f5f5;
+main {
+	width: 90%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
 }
 
 header{
-	height: 10%;
+	height: 8%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -70,9 +67,10 @@ header{
 	padding: 2% 2%;
  }
 
-.main{
+.main {
 	width: 100%;
-	height: 90%;
+	height: 91%;
+	padding: 1%;
 	display: flex;
 	flex-direction: row;
 }
@@ -84,34 +82,22 @@ header{
 	align-items: center;
 }
 
-
- a {
+a {
 	display: block;
-	background-color: white;
-	margin-top: 5px;
-	color: black;
-	width:  110px;
-	height: 30px;
-	border-radius: 25px;
+	color: black !important;
 	text-decoration: none;
+ }
+
+ .nav-btn {
+	width: 90%;
  }
 
  .search-btn{
 	display: inline-block;
-	background-color: #f5f5f5;
 	margin-top: 0;
 	color: black;
 	align-self: baseline;
 	padding-top: 2px;
- }
-
- main{
-	width: 90%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: relative;
  }
 
 #back{
@@ -176,13 +162,19 @@ text-align: left;
 	color: white;
 	margin-top: 10px;
 }
-.fc-header-toolbar.fc-toolbar {
-    margin: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.btn{
-	text-align: center;
-	
+
+
+/* calendar */
+
+.fc {
+	.fc-header-toolbar.fc-toolbar {
+		margin: 5px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	a {
+		font-size: 24px;
+	}
 }

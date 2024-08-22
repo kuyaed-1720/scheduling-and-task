@@ -7,13 +7,14 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 
     {{-- bootstrapv cdn --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>@yield('title')</title>
 </head>
@@ -33,11 +34,11 @@
     <div class="main">
         {{-- navigation panel --}}
         <nav class="sidebar">
-            <a class="nav-btn btn btn-primary" href="/home">Home</a>
-            <a class="nav-btn btn btn-primary" href="/tasks">Task</a>
-            <a class="nav-btn btn btn-primary" href="/events">Events</a>
-            <a class="nav-btn btn btn-primary" href="/users">User</a>
-            <a class="nav-btn btn btn-primary" href="/settings">Settings</a>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/home">Home</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/tasks">Task</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/events">Events</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/users">User</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/settings">Settings</a></button>
         </nav>
 
         {{-- main content --}}
