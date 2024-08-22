@@ -18,7 +18,7 @@
     {{-- Task container --}}
     <div class="container">
         <button class="btn btn-primary mb-3 btn-sm"><a href="{{ route('tasks.create') }}">Create Task</a></button>
-        <button class="btn btn-warning mb-3 btn-sm"><a href="{{ route('tasks.tasksshow') }}">Completed Tasks</a></button>
+        <button class="btn btn-warning mb-3 btn-sm"><a href="{{ route('tasks.tasksshow') }}">Done</a></button>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
