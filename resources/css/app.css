@@ -84,12 +84,7 @@ header{
 
 a {
 	display: block;
-	background-color: white;
-	margin-top: 5px;
-	color: black;
-	width:  110px;
-	height: 30px;
-	border-radius: 25px;
+	color: black !important;
 	text-decoration: none;
  }
 
@@ -138,7 +133,6 @@ a {
 
  table tr{
 	background-color: #d9d9d9;
-	text-align: center;
 	
  }
  
@@ -151,9 +145,9 @@ a {
 
 td button{
 	display: inline;
-	width: 60px;
+	width: 58px;
 	background-color: white;
-	
+	border-radius: 5%;
 }
 
 .user_name , .user_email , .user_pwd , .user_confrm{
@@ -183,18 +177,4 @@ text-align: left;
 	a {
 		font-size: 24px;
 	}
-}
-
-.fa {
-	margin: 0 5px;
-}
-
-:root {
-    --fc-border-color: black;
-    --fc-daygrid-event-dot-width: 5px;
-}
-
-.fc .fc-col-header-cell-cushion {
-    padding-top: 5px; /* Override */
-    padding-bottom: 5px; /* Override */
 }
