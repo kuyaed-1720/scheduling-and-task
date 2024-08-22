@@ -25,8 +25,9 @@ class TaskController extends Controller
             'title' => 'required|max:255',
             'description' => 'nullable',
             'priority' => 'required|max:255',
-            'due' => 'nullable|max:255',
+            'due' => 'required|max:255',
         ]);
+
         Task::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
@@ -50,6 +51,7 @@ class TaskController extends Controller
             'priority' => 'required|in:low,medium,high',
             'due' => 'max:255',
         ]);
+
         $task->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
@@ -71,7 +73,7 @@ class TaskController extends Controller
     {
         $task->update([
             'completed' => true,
-            'completed-at' => now(),
+            'completed_at' => now(),
         ]);
         
         return redirect()->route('tasks.index')->with('success', 'Task completed successfully! Yeeyyy!');

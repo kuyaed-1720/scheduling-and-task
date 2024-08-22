@@ -34,11 +34,11 @@
     <div class="main">
         {{-- navigation panel --}}
         <nav class="sidebar">
-            <button class="btn btn-primary mb-2 nav-btn"><a href="/home">Home</a></button>
-            <button class="btn btn-primary mb-2 nav-btn"><a href="/tasks">Task</a></button>
-            <button class="btn btn-primary mb-2 nav-btn"><a href="/events">Events</a></button>
-            <button class="btn btn-primary mb-2 nav-btn"><a href="/users">User</a></button>
-            <button class="btn btn-primary mb-2 nav-btn"><a href="/settings">Settings</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/home"><i class="fa fa-home"></i>Home</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/tasks"><i class="fa fa-list-check"></i>Task</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/events"><i class="fa fa-calendar"></i>Events</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/users"><i class="fa fa-user"></i>User</a></button>
+            <button class="btn btn-primary mb-2 nav-btn"><a href="/settings"><i class="fa fa-gears"></i>Settings</a></button>
         </nav>
 
         {{-- main content --}}
