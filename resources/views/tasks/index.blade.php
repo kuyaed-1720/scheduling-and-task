@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h2>Task List</h2>
+    <h1>Task List</h1>
 
     {{-- show success notif --}}
     @if (session('success'))
