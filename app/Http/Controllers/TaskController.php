@@ -71,7 +71,7 @@ class TaskController extends Controller
     {
         $task->update([
             'completed' => true,
-            'completed-at' => now(),
+            'completed_at' => now(),
         ]);
         
         return redirect()->route('tasks.index')->with('success', 'Task completed successfully! Yeeyyy!');
