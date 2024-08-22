@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-    <h1>Task Management</h1>
     <h2>Task List</h2>
 
     {{-- show success notif --}}
@@ -17,16 +16,24 @@
 
     {{-- Task container --}}
     <div class="container">
-        <button class="btn btn-primary mb-3 btn-sm"><a href="{{ route('tasks.create') }}">Create Task</a></button>
-        <button class="btn btn-warning mb-3 btn-sm"><a href="{{ route('tasks.tasksshow') }}">Done</a></button>
+        <form action="{{ route('tasks.create') }}" method="GET" style="display: inline;">
+            @csrf
+            @method('GET')
+            <button class="btn btn-primary mb-3 btn-lg">Create New Task</button>
+        </form>
+        <form action="{{ route('tasks.tasksshow') }}" method="GET" style="display: inline;">
+            @csrf
+            @method('GET')
+            <button class="btn btn-warning mb-3 btn-lg">Completed Tasks</button>
+        </form>
         <table class="table table-bordered">
-            <thead class="thead-dark">
+            <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Priority</th>
-                    <th>Due</th>
-                    <th>Action</th>
+                    <th class="bg-secondary">Title</th>
+                    <th class="bg-secondary">Description</th>
+                    <th class="bg-secondary">Priority</th>
+                    <th class="bg-secondary">Due</th>
+                    <th class="bg-secondary">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,11 +50,15 @@
                         <td>{{ $task->priority }}</td>
                         <td>{{ $task->due }}</td>
                         <td>
-                            <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('tasks.edit', $task->id) }}" method="GET" style="display: inline;">
+                                @csrf
+                                @method('GET')
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                            </form>
                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-s" type="submit" onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
+                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
                             </form>
                             @if (!$task->completed)
                                 <form action="{{ route('tasks.complete', $task->id) }}" method="POST" style="display: inline;">
