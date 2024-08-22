@@ -30,13 +30,13 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($tasks as $task)
+                @foreach ($tasks as $task)
                     <tr>
                         <td>{{ $task->title }}</td>
                         <td>{{ $task->description }}</td>
                         <td>{{ $task->priority }}</td>
                         <td>{{ $task->due }}</td>
-                        <td>
+                        {{-- <td>
                             <a href="{{ route('tasks.edit', $task->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display: inline;">
                                 @csrf
@@ -49,9 +49,9 @@
                                     <button class="btn btn-warning btn-sm" type="submit">Complete</button>
                                 </form>
                             @endif
-                        </td>
+                        </td> --}}
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>
