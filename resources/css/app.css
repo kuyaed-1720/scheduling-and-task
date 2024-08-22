@@ -93,7 +93,7 @@ a {
  }
 
  .nav-btn {
-	width: 90%;
+	width: fit-content;
  }
 
  .search-btn{
