@@ -10,7 +10,7 @@
 		<form action="{{ route('tasks.update', $task->id) }}" method="post">
 			@csrf
 			@method('PUT')
-			<<div class="form-group">
+			<div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" class="form-control" value="{{ $task->title }}" required>
             </div>
