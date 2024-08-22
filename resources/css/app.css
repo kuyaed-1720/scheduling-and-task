@@ -35,18 +35,6 @@ h1{
 	border: 2px solid #021526;
 }
 
-.block-1{
-	border: 2px solid blue;
-}
-.block-2{
-	border: 2px solid green;
-}
-
-img{
-	height: 100%;
-	width: 100%;
-}
-
 main {
 	width: 90%;
 	height: 100%;
@@ -97,11 +85,7 @@ a {
  }
 
  .search-btn{
-	display: inline-block;
-	margin-top: 0;
-	color: black;
-	align-self: baseline;
-	padding-top: 2px;
+	
  }
 
 #back{
