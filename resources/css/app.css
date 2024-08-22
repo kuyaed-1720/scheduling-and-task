@@ -1,11 +1,11 @@
-
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-html,body{
+html,
+body {
 	width: 100%;
 	height: 100%;
 }
@@ -16,20 +16,21 @@ body {
 	/* font-family: 'Courier New', Courier, monospace; */
 	/* font-size: medium; */
 	/* font-weight: 900; */
-	
+
 }
 
-header, .sidebar{
+header,
+.sidebar {
 	background-color: #d9d9d9;
 	display: flex;
 }
 
-h1{
+h1 {
 	margin-top: 5px;
 	background-color: #d9d9d9;
 }
 
-.wrapper{
+.wrapper {
 	display: flex;
 	flex-direction: row;
 	border: 2px solid #021526;
@@ -44,7 +45,7 @@ main {
 	position: relative;
 }
 
-header{
+header {
 	height: 8%;
 	width: 100%;
 	display: flex;
@@ -52,7 +53,7 @@ header{
 	align-items: center;
 	justify-content: space-between;
 	padding: 1% 1%;
- }
+}
 
 .main {
 	width: 100%;
@@ -62,7 +63,7 @@ header{
 	flex-direction: row;
 }
 
-.sidebar{
+.sidebar {
 	width: 10%;
 	height: 100%;
 	flex-direction: column;
@@ -71,27 +72,26 @@ header{
 
 a {
 	display: block;
-	background-color: white;
 	margin-top: 5px;
 	color: black;
-	width:  110px;
+	width: 110px;
 	height: 30px;
 	border-radius: 25px;
 	text-decoration: none;
- }
+}
 
- .nav-btn {
+.nav-btn {
 	width: fit-content;
- }
+}
 
- .search-btn{
+.search-btn {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 
- }
+}
 
-#back{
+#back {
 	position: absolute;
 	top: 1%;
 	left: 1%;
@@ -102,14 +102,14 @@ table {
 	text-align: center;
 }
 
- table button{
+table button {
 	margin: 2% 2%;
 	display: contents;
 	justify-content: space-between;
 	background-color: #5F6F65;
- }
+}
 
- .user_table{
+.user_table {
 	margin-bottom: 5px;
 	width: 80%;
 	height: 85%;
@@ -117,27 +117,27 @@ table {
 	table-layout: fixed;
 	min-width: 800px;
 
-	td{
+	td {
 		background-color: #5F6F65;
 		width: 10%;
 		height: 4vh;
 		vertical-align: middle;
 	}
- }
+}
 
- table tr{
+table tr {
 	background-color: #d9d9d9;
-	
- }
- 
-#calendar{
+
+}
+
+#calendar {
 	width: 90%;
 	height: 97%;
 	background-color: #6482ad;
 }
 
 
-td button{
+td button {
 	display: inline;
 	width: 58px;
 	background-color: white;
@@ -145,14 +145,18 @@ td button{
 	border-radius: 5%;
 }
 
-.user_name , .user_email , .user_pwd , .user_confrm{
-width: 100%;
-color: #021526;
-display: flex;
-flex-direction: column;
-text-align: left;
+.user_name,
+.user_email,
+.user_pwd,
+.user_confrm {
+	width: 100%;
+	color: #021526;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
 }
-.create-btn{
+
+.create-btn {
 	background-color: #5F6F65;
 	color: white;
 	margin-top: 10px;
@@ -173,12 +177,15 @@ text-align: left;
 		font-size: 24px;
 	}
 }
+
 :root {
-    --fc-border-color: black;
-    --fc-daygrid-event-dot-width: 5px;
+	--fc-border-color: black;
+	--fc-daygrid-event-dot-width: 5px;
 }
 
 .fc .fc-col-header-cell-cushion {
-    padding-top: 0; /* Override */
-    padding-bottom: 0; /* Override */
+	padding-top: 0;
+	/* Override */
+	padding-bottom: 0;
+	/* Override */
 }
