@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="due">Due</label>
-                <input type="date" class="form-control" id="due" name="due">
+                <input type="date" class="form-control" id="due" name="due" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
