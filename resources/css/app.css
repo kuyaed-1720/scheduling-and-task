@@ -111,7 +111,15 @@ header{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
  }
+
+#back{
+	position: absolute;
+	top: 1%;
+	left: 1%;
+	border-radius: 10%;
+}
 
  table button{
 	width: 100%;
@@ -167,13 +175,6 @@ text-align: left;
 	background-color: #5F6F65;
 	color: white;
 	margin-top: 10px;
-}
-
-#back{
-	position: fixed;
-	top: 135px;
-	left: 201px;
-	border-radius: 10%;
 }
 .fc-header-toolbar.fc-toolbar {
     margin: 5px;
