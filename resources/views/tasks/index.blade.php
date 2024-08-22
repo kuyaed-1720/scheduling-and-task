@@ -41,7 +41,7 @@
                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
+                                <button class="btn btn-danger btn-s" type="submit" onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
                             </form>
                             @if (!$task->completed)
                                 <form action="{{ route('tasks.complete', $task->id) }}" method="POST" style="display: inline;">

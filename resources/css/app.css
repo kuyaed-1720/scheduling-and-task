@@ -181,3 +181,7 @@ text-align: left;
     flex-direction: row;
     align-items: center;
 }
+.btn{
+	text-align: center;
+	
+}
