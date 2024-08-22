@@ -31,11 +31,11 @@
     <div class="main">
         {{-- navigation panel --}}
         <nav class="sidebar">
-            <a class="nav-btn btn btn-primary btn-sm" href="/home">Home</a>
-            <a class="nav-btn btn btn-primary btn-sm" href="/tasks">Task</a>
-            <a class="nav-btn btn btn-primary btn-sm" href="/events">Events</a>
-            <a class="nav-btn btn btn-primary btn-sm" href="/users">User</a>
-            <a class="nav-btn btn btn-primary btn-sm" href="/settings">Settings</a>
+            <a class="nav-btn btn btn-primary" href="/home">Home</a>
+            <a class="nav-btn btn btn-primary" href="/tasks">Task</a>
+            <a class="nav-btn btn btn-primary" href="/events">Events</a>
+            <a class="nav-btn btn btn-primary" href="/users">User</a>
+            <a class="nav-btn btn btn-primary" href="/settings">Settings</a>
         </nav>
 
         {{-- main content --}}
