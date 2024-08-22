@@ -176,6 +176,6 @@ text-align: left;
 }
 
 .fc .fc-col-header-cell-cushion {
-    padding-top: 5px; /* Override */
-    padding-bottom: 5px; /* Override */
+    padding-top: 0; /* Override */
+    padding-bottom: 0; /* Override */
 }
