@@ -16,10 +16,10 @@
     {{-- header and title --}}
     <header>
         <h3>Scheduling and Task Management System</h3>
-        <div class="">
+        <div class=" ">
             <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit"><a href="https://youtu.be/dQw4w9WgXcQ">Search</a></button> <!-- rickrolled! -->
+            <button class="btn btn-outline-success" type="submit"><a class="search-btn" href="#!">Search</a></button> <!-- rickrolled! -->
             </form>
         </div>
     </header>
