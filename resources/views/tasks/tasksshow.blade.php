@@ -13,6 +13,15 @@
                 <th>Description</th>
                 <th>Completion Date</th>
             </thead>
+            <tbody>
+                @foreach ($completedTasks as $task)
+                <tr>
+                    <td>{{ $task->title }}</td>
+                    <td>{{ $task->description }}</td>
+                    <td>{{ $task->completed_at }}</td>
+                </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 @endsection
