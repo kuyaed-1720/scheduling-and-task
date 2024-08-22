@@ -85,7 +85,10 @@ a {
  }
 
  .search-btn{
-	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
  }
 
 #back{
