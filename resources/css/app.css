@@ -151,6 +151,7 @@ td button{
 	display: inline;
 	width: 58px;
 	background-color: white;
+	width: 10vw;
 	border-radius: 5%;
 }
 

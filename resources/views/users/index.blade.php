@@ -23,7 +23,7 @@
         <button type="submit">Create New User</button>
     </form>
     <h3>Users List</h3>
-    <table class="user_table">
+    <table class="user_table table">
         <thead>
             <tr>
                 <th>ID</th>
