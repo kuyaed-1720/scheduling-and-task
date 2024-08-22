@@ -39,8 +39,6 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        $task = Task::all();
-
         return view('tasks.edit', compact('task'));
     }
 
@@ -50,7 +48,7 @@ class TaskController extends Controller
             'title' => 'required|max:255',
             'description' => 'nullable',
             'priority' => 'required|in:low,medium,high',
-            'due' => 'nullable|max:255',
+            'due' => 'max:255',
         ]);
         $task->update([
             'title' => $request->input('title'),
