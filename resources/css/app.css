@@ -88,9 +88,11 @@ header{
  a {
 	display: block;
 	background-color: white;
-	margin-top: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 	color: black;
-	width:  110px;
+	justify-content: center;
+	width:  100px;
 	height: 30px;
 	border-radius: 25px;
 	text-decoration: none;
@@ -147,6 +149,7 @@ header{
 
  table tr{
 	background-color: #d9d9d9;
+	text-align: center;
 	
  }
  
@@ -159,9 +162,9 @@ header{
 
 td button{
 	display: inline;
-	width: 58px;
+	width: 60px;
 	background-color: white;
-	border-radius: 5%;
+	
 }
 
 .user_name , .user_email , .user_pwd , .user_confrm{
@@ -185,4 +188,13 @@ text-align: left;
 .btn{
 	text-align: center;
 	
+}
+:root {
+    --fc-border-color: black;
+    --fc-daygrid-event-dot-width: 5px;
+}
+
+.fc .fc-col-header-cell-cushion {
+    padding-top: 5px; /* Override */
+    padding-bottom: 5px; /* Override */
 }
