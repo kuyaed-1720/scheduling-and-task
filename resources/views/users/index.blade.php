@@ -15,7 +15,7 @@
         }
     </script>
     @if (session('success'))
-        <div>{{ session('success') }}</div>
+        <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     <h1>Users List</h1>
     <form action="{{ route('users.create') }}" method="GET">
@@ -23,41 +23,37 @@
         @method('GET')
         <button type="submit" class="btn btn-lg btn-primary mb-3"><i class="fa fa-plus"></i>Create New User</button>
     </form>
-    <table class="user_table table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Action</th>  
-            </tr>
-        </thead>
-        <tbody>
-            @if ($userCount == 0)
-                <div class="none">No users yet</div>
-            @endif
-            @foreach ($users as $user)
+    <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td>{{ $user->id }}</td>
-                    <td ondblclick="editCell(this, {{ $user->id }}, 'name')">{{ $user->name }}</td>
-                    <td ondblclick="editCell(this, {{ $user->id }}, 'email')">{{ $user->email }}</td>
-                    <td>
-                        <form action="{{ route('users.edit', $user->id) }}" method="POST">
-                            @csrf
-                            @method('GET')
-                            <button type="submit">Edit</button>
-                        </form>
-                    
-                        <form action="{{ route('users.destroy', $user->id) }}" onclick="confirmDelete(event)" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
-                    </td>
+                    <th class="bg-secondary">ID</th>
+                    <th class="bg-secondary">Name</th>
+                    <th class="bg-secondary">Email</th>
+                    <th class="bg-secondary">Action</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>
+                            <form action="{{ route('users.edit', $user->id) }}" method="GET" style="display: inline;">
+                                @csrf
+                                @method('GET')
+                                <button class="btn btn-primary btn-sm">Edit</button>
+                            </form>
+                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure you want to delete this task?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
 
     <script>
         function editCell(cell, userId, field) {
