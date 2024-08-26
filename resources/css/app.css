@@ -70,8 +70,14 @@ header {
 	align-items: center;
 }
 
+
 .sidebar a {
+	text-align: left;
 	color: white;
+}
+
+.sidebar .fa {
+	margin-right: 10px;
 }
 
 a {
@@ -192,4 +198,8 @@ td button {
 	/* Override */
 	padding-bottom: 0;
 	/* Override */
+}
+
+.fa {
+	margin-right: 5px;
 }

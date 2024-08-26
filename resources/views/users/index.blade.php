@@ -17,12 +17,12 @@
     @if (session('success'))
         <div>{{ session('success') }}</div>
     @endif
+    <h1>Users List</h1>
     <form action="{{ route('users.create') }}" method="GET">
         @csrf
         @method('GET')
-        <button type="submit">Create New User</button>
+        <button type="submit" class="btn btn-lg btn-primary mb-3"><i class="fa fa-plus"></i>Create New User</button>
     </form>
-    <h3>Users List</h3>
     <table class="user_table table">
         <thead>
             <tr>
