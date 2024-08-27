@@ -7,37 +7,63 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-	public function index(Request $request)
+	public function index()
     {
-        if ($request->ajax()) {
-            $data = Event::whereDate('start', '>=', $request->start)
-                ->whereDate('end', '<=', $request->end)
-                ->get(['id', 'title', 'start', 'end']);
-            return response()->json($data);
-        }
-        return view('events.index');
+        $events = Event::all();
+        return view('events.index', compact('events'));
     }
 
-    public function ajax(Request $request)
+    public function getEvents()
     {
-        switch ($request->type) {
-            case 'add':
-                $event = Event::create([
-                    'title' => $request->title,
-                    'start' => $request->start,
-                    'end' => $request->end,
-                ]);
-                return response()->json($event);
-            case 'update':
-                $event = Event::find($request->id)->update([
-                    'title' => $request->title,
-                    'start' => $request->start,
-                    'end' => $request->end,
-                ]);
-                return response()->json($event);
-            case 'delete':
-                Event::find($request->id)->delete();
-                return response()->json(['success' => true]);
-        }
+        $events = Event::all();
+        return response()->json($events);
     }
+
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'start' => 'required|max:255',
+            'end' => 'max:255',
+        ]);
+
+        Event::create([
+            'title' => $request->input('title'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+        ]);
+
+        return redirect()->route('events.index')->with('success', 'Event created successfully!');
+    }
+
+    public function edit(Event $event)
+    {
+        return view('events.edit', compact('events'));
+    }
+
+    public function update(Request $request, Event $event)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'start' => 'required|max:255',
+            'end' => 'max:255',
+        ]);
+
+        $event->update([
+            'title' => $request->input('title'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+        ]);
+
+        return redirect()->route('events.index')->with('success', 'Event updated successfully!');
+    }
+
+    public function destroy(Event $event)
+    {
+        $event->delete();
+
+        return redirect()->route('events.index')->with('success', 'Event deleted successfully!');
+    }
+
 }
