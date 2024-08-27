@@ -66,7 +66,7 @@ class TaskController extends Controller
     {
         $task->delete();
 
-        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully! Mwehehhe');
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
     }
 
     public function complete(Task $task)
