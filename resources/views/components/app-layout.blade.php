@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- @include('global-plugins') --}}
     @yield('meta')
+    @vite('resources/css/app.css', 'resources/js/app.js')
     <title>@yield('title')</title>
 </head>
 <body>
