@@ -52,5 +52,25 @@
         </main>
 
     </div>
+
+    {{-- alert notifications --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var notification = document.querySelector('.alert');
+            if (notification) {
+                notification.style.display = 'block';
+                setTimeout(function() {
+                    notification.style.opacity = '1';
+                    notification.style.transition = 'opacity 1s';
+                    setTimeout(function() {
+                        notification.style.opacity = '0';
+                        setTimeout(function() {
+                            notification.style.display = 'none';
+                        }, 1000);
+                    }, 3000);
+                }, 100);
+            }
+        });
+    </script>
 </body>
 </html>
