@@ -6,30 +6,28 @@
 
 @section('content')
     <h1>Create User</h1>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <form class="container" action="{{ route('users.store') }}" method="POST">
         @csrf
         <div class="user_name mb-3">
             <label for="name">Name:</label>
             <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}">
+            @error('name')
+                <div class="">{{ $message }}</div>
+            @enderror
         </div>
         <div class="user_email mb-3">
             <label for="email">Email:</label>
             <input class="form-control" type="email" id="email" name="email" value="{{ old('email') }}">
+            @error('email')
+                <div>{{ $message }}</div>
+            @enderror
         </div>
         <div class="user_pwd mb-3">
             <label for="password">Password:</label>
             <input class="form-control" type="password" id="password" name="password">
+            @error('password')
+                <div>{{ $message }}</div>
+            @enderror
         </div>
         <div class="user_confrm mb-3">
             <label for="password_confirmation">Confirm Password:</label>
