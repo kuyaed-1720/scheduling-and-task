@@ -54,37 +54,4 @@
                 @endforeach
             </tbody>
         </table>
-
-    <script>
-        function editCell(cell, userId, field) {
-            const originalContent = cell.innerHTML;
-            cell.innerHTML = `<input type="text" value="${originalContent}" onblur="saveCell(this, ${userId}, '${field}', '${originalContent}')">`;
-            cell.querySelector('input').focus();
-        }
-
-        function saveCell(input, userId, field, originalContent) {
-            const newValue = input.value;
-            const cell = input.parentElement;
-            cell.innerHTML = newValue || originalContent;
-
-            // Send AJAX request to update the value in the database
-            fetch(`/update-cell`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                body: JSON.stringify({
-                    id: userId,
-                    field: field,
-                    value: newValue
-                })
-            }).then(response => response.json())
-              .then(data => {
-                  if (!data.success) {
-                      cell.innerHTML = originalContent; // Revert to original content if update fails
-                  }
-              });
-        }
-    </script>
 @endsection
