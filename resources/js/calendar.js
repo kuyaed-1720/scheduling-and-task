@@ -20,30 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		initialView: 'dayGridMonth',
 		editable: true,
 		selectable: true,
-		events: '/events',
+		events: '/api/events',
 		dateClick: function (info) {
-			var title = prompt('Enter Event Title:');
-			var start = info.dateStr;
-			if (title) {
-				$.ajax({
-					url: '/events',
-					data: {
-						title: title,
-						start: start,
-						type: 'add'
-					},
-					type: "POST",
-					success: function (data) {
-						calendar.addEvent({
-							id: data.id,
-							title: data.title,
-							start: data.start,
-							end: data.end
-						});
-						alert("Event added successfully!");
-					}
-				});
-			}
+			$('#eventModal').modal('show');
+			// $('#start').val(info.dateStr);
 		}
 	});
 	calendar.render();
