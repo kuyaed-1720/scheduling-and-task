@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     @include('includes.plugins')
+    <link rel="stylesheet" href="{{ asset('css/login-signup.css') }}">
     @vite('resources/css/login-signup.css', 'resources/js/app.js')
 </head>
 <body class="login-signup">
