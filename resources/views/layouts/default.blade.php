@@ -7,12 +7,24 @@
     <title>@yield('title')</title>
     @include('includes.plugins')
 </head>
-<body>
-    <header>@include('includes.header')</header>
-    <div>
-        @include('includes.sidebar')
-        <main>@yield('content')</main>
+<body class="text-center">
+    <header class="row">
+        <div class="col">
+            @include('includes.header')
+        </div>
+    </header>
+    <div class="row">
+        <div class="col">
+            @include('includes.sidebar')
+        </div>
+        <div class="col">
+            <main>@yield('content')</main>
+        </div>
     </div>
-    <footer>@include('includes.footer')</footer>
+    <footer class="row">
+        <div class="col">
+            @include('includes.footer')
+        </div>
+    </footer>
 </body>
 </html>
