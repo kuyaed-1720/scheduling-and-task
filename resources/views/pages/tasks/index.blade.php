@@ -1,3 +1,7 @@
-<div>
-    <!-- Order your soul. Reduce your wants. - Augustine -->
-</div>
+@extends('layouts.default')
+@section('title')
+    Manage Tasks
+@endsection
+@section('content')
+    
+@endsection

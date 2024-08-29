@@ -1,3 +1,7 @@
-<div>
-    <!-- Well begun is half done. - Aristotle -->
-</div>
+@extends('layouts.default')
+@section('title')
+    Settings
+@endsection
+@section('content')
+    
+@endsection
