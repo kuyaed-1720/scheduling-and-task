@@ -8,7 +8,7 @@
     @include('includes.plugins')
     @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
-<body class="text-center">
+<body>
     <header class="row">
         @include('includes.header')
     </header>
