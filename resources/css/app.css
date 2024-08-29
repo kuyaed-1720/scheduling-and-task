@@ -32,7 +32,7 @@ header,
 body div:first-of-type nav,
 body div:first-of-type main,
 footer {
-	padding: 5px;
+	padding: 10px;
 	border: none;
 	border-radius: 5px;
 	background: var(--grey);
@@ -65,6 +65,7 @@ nav {
 main {
 	width: 90%;
 	height: 100%;
+	align-items: start;
 	justify-content: start;
 }
 

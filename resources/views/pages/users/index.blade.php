@@ -3,8 +3,9 @@
     Manage Users
 @endsection
 @section('content')
-    <table class="table">
-        <thead>
+    <h2>Users</h2>
+    <table class="table table-bordered table-hover table-secondary">
+        <thead class="text-center table-dark">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">First</th>
