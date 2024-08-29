@@ -23,6 +23,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background: url('{{ assets("images\\tropical-green-leaves-background.jpg") }}');
 }
 
 header,
@@ -40,7 +41,6 @@ header {
 main {
 	width: 100%;
 	height: 100%;
-	background: rgb(13, 41, 13);
 }
 
 footer {
