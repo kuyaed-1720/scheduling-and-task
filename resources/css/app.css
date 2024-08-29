@@ -6,7 +6,7 @@
 }
 
 :root {
-	--grey: rgb(222, 222, 222);
+	--grey: rgb(245, 245, 245);
 }
 
 :root,
@@ -82,8 +82,15 @@ a {
 	text-decoration: none;
 }
 
-.btn-primary a {
+button:hover a {
 	color: white;
+}
+
+nav a {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 5px;
+	font-size: larger !important;
 }
 
 /******************** MAIN ********************/
