@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // sidebar
 Route::get('/', function () { return view('welcome'); })->name('welcome');
-Route::get('/home', function () { return view('welcome'); })->name('welcome');
+Route::get('/home', function () { return view('home'); })->name('home');
 Route::get('/tasks', function () { return view('pages.tasks.index'); })->name('tasks');
 Route::get('/calendar', function () { return view('pages.calendar.index'); })->name('calendar');
 Route::get('/settings', function () { return view('pages.settings.index'); })->name('settings');
