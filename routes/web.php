@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+// sidebar
 Route::get('/', function () { return view('welcome'); })->name('welcome');
 Route::get('/home', function () { return view('welcome'); })->name('welcome');
 Route::get('/tasks', function () { return view('pages.tasks.index'); })->name('pages.tasks.index');
