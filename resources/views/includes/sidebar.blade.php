@@ -1,5 +1,5 @@
-<a class="btn btn-success" href="#" role="button">Home</a>
-<a class="btn btn-success" href="#" role="button">Tasks</a>
-<a class="btn btn-success" href="#" role="button">Calendar</a>
-<a class="btn btn-success" href="#" role="button">Users</a>
-<a class="btn btn-success" href="#" role="button">Settings</a>
+<a class="btn btn-success" href="#" role="button"><i class="bi bi-house-fill"></i>Home</a>
+<a class="btn btn-success" href="#" role="button"><i class="bi bi-list-task"></i>Tasks</a>
+<a class="btn btn-success" href="#" role="button"><i class="bi bi-calendar-fill"></i>Calendar</a>
+<a class="btn btn-success" href="#" role="button"><i class="bi bi-people-fill"></i>Users</a>
+<a class="btn btn-success" href="#" role="button"><i class="bi bi-gear-fill"></i>Settings</a>
