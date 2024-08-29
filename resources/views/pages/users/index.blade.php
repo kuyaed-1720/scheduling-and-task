@@ -3,7 +3,10 @@
     Manage Users
 @endsection
 @section('content')
-    <h2>Users</h2>
+    <div class="d-flex flex-row justify-content-between">
+        <h1>Users</h1>
+        <a href="" class="btn btn-primary mb-2" role="button"><i class="bi bi-plus"></i>Add New</a>
+    </div>
     <table class="table table-bordered table-hover table-secondary">
         <thead class="text-center table-dark">
             <tr>

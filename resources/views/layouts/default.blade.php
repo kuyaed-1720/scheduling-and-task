@@ -12,7 +12,7 @@
     <header class="">
         @include('includes.header')
     </header>
-    <div class="">
+    <div class="body">
         <nav class="">
             @include('includes.sidebar')
         </nav>
