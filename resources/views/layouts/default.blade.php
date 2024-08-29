@@ -9,18 +9,18 @@
     @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
 <body>
-    <header class="row">
+    <header class="">
         @include('includes.header')
     </header>
-    <div class="row">
-        <nav class="col">
+    <div class="">
+        <nav class="">
             @include('includes.sidebar')
         </nav>
-        <main class="col">
+        <main class="">
             @yield('content')
         </main>
     </div>
-    <footer class="row">
+    <footer class="">
         @include('includes.footer')
     </footer>
 </body>
