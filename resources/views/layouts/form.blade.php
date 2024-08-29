@@ -8,14 +8,14 @@
     @include('includes.plugins')
     @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
-<body>
-    <header class="">
-        @include('includes.header')
+<body class="login-signup">
+    <header>
+        <h2>Scheduling and Task Management System</h2>
     </header>
-    <main class="">
+    <main>
         @yield('content')
     </main>
-    <footer class="">
+    <footer>
         @include('includes.footer')
     </footer>
 </body>
