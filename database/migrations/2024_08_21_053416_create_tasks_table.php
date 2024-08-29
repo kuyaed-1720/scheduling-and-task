@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('priority', ['low', 'medium', 'high']);
             $table->dateTime('due');
             $table->boolean('completed')->default(false);
-            $table->timestamps();
+            // $table->dateTime('');
             $table->timestamp('completed_at')->nullable()->default(null);
         });
     }
