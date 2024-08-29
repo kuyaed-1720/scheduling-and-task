@@ -1,0 +1,110 @@
+/******************** DEFAULT LAYOUT ********************/
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--grey: rgb(245, 245, 245);
+	--light-green: rgb(238, 255, 238);
+}
+
+:root,
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 16px;
+}
+
+body {
+	padding: 2px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+body,
+nav,
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+header,
+.body nav,
+.body main,
+footer {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background: var(--grey);
+}
+
+header {
+	width: 100%;
+	height: 8%;
+	padding: 5px 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.body {
+	width: 100%;
+	height: 86%;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav {
+	width: 9.75%;
+	height: 100%;
+	margin-right: 2px;
+	justify-content: start;
+}
+
+main {
+	width: 90%;
+	height: 100%;
+	justify-content: start;
+	position: inherit;
+}
+
+footer {
+	width: 100%;
+	height: 5%;
+	text-align: center;
+	padding: 1rem;
+	font-size: 14px;
+	opacity: 0.8;
+}
+
+/******************** BOOTSTRAP FIX ********************/
+
+.bi {
+	margin-right: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+button a {
+	color: green;
+}
+
+button:hover a {
+	color: white;
+}
+
+nav .btn {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 5px;
+	font-size: larger !important;
+	text-align: left;
+}
+
+/******************** MAIN ********************/

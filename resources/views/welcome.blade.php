@@ -1,4 +1,7 @@
-@extends('components.app-layout')
+@extends('layouts.form')
 @section('title')
-    Home
+    Welcome Page
+@endsection
+@section('content')
+    <img src="{{ asset('images/tropical-green-leaves-background') }}" alt="Logo">
 @endsection
