@@ -10,22 +10,18 @@
 </head>
 <body class="text-center">
     <header class="row">
-        <div class="col">
-            @include('includes.header')
-        </div>
+        @include('includes.header')
     </header>
     <div class="row">
-        <div class="col">
+        <nav class="col">
             @include('includes.sidebar')
-        </div>
-        <div class="col">
-            <main>@yield('content')</main>
-        </div>
+        </nav>
+        <main class="col">
+            @yield('content')
+        </main>
     </div>
     <footer class="row">
-        <div class="col">
-            @include('includes.footer')
-        </div>
+        @include('includes.footer')
     </footer>
 </body>
 </html>
