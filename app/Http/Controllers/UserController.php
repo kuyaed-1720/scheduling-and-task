@@ -12,4 +12,9 @@ class UserController extends Controller
         $users = User::all();
         return view('pages.users.index', compact('users'));
     }
+
+    public function create()
+    {
+        //
+    }
 }

@@ -12,4 +12,5 @@ Route::get('/users', function () { return view('pages.users.index'); })->name('u
 Route::get('/settings', function () { return view('pages.settings.index'); })->name('settings');
 
 // users
-Route::get('/users', [UserController::class, 'index'])->name('users');
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/create', [UserController::class, 'create']);
