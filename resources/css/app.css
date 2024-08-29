@@ -82,6 +82,10 @@ a {
 	text-decoration: none;
 }
 
+button a {
+	color: green;
+}
+
 button:hover a {
 	color: white;
 }
