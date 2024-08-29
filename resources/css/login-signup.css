@@ -23,7 +23,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: url('{{ assets("images\\tropical-green-leaves-background.jpg") }}');
+	background-image: url('{{ asset("images/tropical-green-leaves-background.jpg") }}');
 }
 
 header,
