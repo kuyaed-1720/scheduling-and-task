@@ -41,7 +41,7 @@
             <button class="btn btn-primary mb-2 nav-btn"><a href="/users"><i class="fa fa-user"></i>User</a></button>
             <button class="btn btn-primary mb-2 nav-btn"><a href="/settings"><i class="fa fa-gears"></i>Settings</a></button>
         </nav>
-        
+         
         {{-- main content --}}
         <main>
 			{{-- back button --}}
@@ -61,7 +61,7 @@
                 notification.style.display = 'block';
                 setTimeout(function() {
                     notification.style.opacity = '1';
-                    notification.style.transition = 'opacity 1s';
+                    notification.style.transition = 'opacity 0.25s';
                     setTimeout(function() {
                         notification.style.opacity = '0';
                         setTimeout(function() {
