@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\SettingController;
 
 // Home
 Route::get('/', function () { return view('home'); });
@@ -32,3 +33,6 @@ Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.upda
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 Route::post('/tasks/{task}', [TaskController::class, 'complete'])->name('tasks.complete');
 Route::get('/tasksshow', [TaskController::class, 'tasksshow'])->name('tasks.tasksshow');
+
+// Settings
+Route::get('/settings', [SettingController::class, 'index'])->name('setting.index');
