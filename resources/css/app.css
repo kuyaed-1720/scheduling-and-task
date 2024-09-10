@@ -218,3 +218,18 @@ td button {
 p{
 	text-align:center;
 }
+.set_0{
+	background-color: black;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	border: solid;
+	border-radius: 15px;
+}
+.set_1,.set_2,.set_3{
+	margin: 5px 10px 5px 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
