@@ -3,6 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
+import { NowIndicatorContainer } from '@fullcalendar/core/internal';
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -23,12 +24,45 @@ document.addEventListener('DOMContentLoaded', function () {
 			center: 'title'},
 		editable: true,
 		selectable: true,
-		events: '/api/events',
-		timeZone: 'Manila/Philippines',
-		eventColor:'black',
-		eventDisplay:'auto',
+		events: [
+			// {
+			// title: 'Start of Revision',
+			// title:'Change Study',
+			// start: '2024-09-18',
+			// end: '2024-09-18',
+		// },
+		// {
+			// title: 'Day 2 data gathering',
+			// start: '2024-09-19',
+			// end: '2024=09-19',
+		// },
+		// {
+			// title: 'Revision and checking with Adviser',
+			// start: '2024-09-24',
+			// end: '2024-09-24',
+		// }
+		{
+			groupId: 'blueEvents', // recurrent events in this group move together
+			weekdays: [ 1, 5],
+			startTime: '10:45:00',
+			endTime: '12:45:00'
+		  },
+		  {
+			daysOfWeek: [ 0, 6], // these recurrent events move separately
+			startTime: '11:00:00',
+			endTime: '11:30:00',
+			color: 'red'
+		  }
+	],
+		eventOverlap: function (stillEvent,movingEvent) {
+			return stillEvent.allDay && movingEvent.daysOfWeek
+		},
+		eventResizableFromStart: true,
+		timeZone: 'Manila, Philippines · UTC+8',
+		eventColor:'green',
+		eventDisplay:'list-items',
 		stickyHeaderDates:'true',
-		handleWindowResize: true,
+		handleWindowResize: 'true',
 		businessHours:[
 			{
 				daysOfWeek:[ 1, 2, 3, 4, 5],
@@ -37,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				endTime: '17:00',
 			}
 		],
+		NowIndicator: true,
 		dateClick: function(info){
 			alert('CLICKED: ' + formatIsoTimeString);
 		},

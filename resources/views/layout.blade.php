@@ -53,7 +53,7 @@
                 <button class="btn" id="back" onclick="history.back()"><i class="fa fa-chevron-left"></i></button>
             @endif
             @yield('content')
-            
+          
         </main>
 
     </div>

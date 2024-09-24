@@ -66,11 +66,12 @@ header {
 .sidebar {
 	background-color: black;
 	color: white;
-	display: flex;
+	display: bloc;
 	flex-direction: column;
 	border: solid;
 	border-radius: 20px;
-	padding: 10px 20px 90px 20px ;
+	padding: 10px 20px 90px 20px;
+	height: 42%;
 }
 
 .sidebar a {
@@ -114,7 +115,6 @@ header {
 	height: 100%;
 	display: flex;
 	justify-content: space-evenly;
-	
-    text-decoration: none;
-	
+	background-color: black;
+	color: white;
 }
