@@ -30,7 +30,7 @@
         <h3>Scheduling and Task Management System</h3>
         <div class="wrapper">
             <form class="d-flex" role="search" method="GET">
-            <input class="form-control me-2" name="search" id="search" type="search" placeholder="Search" aria-label="Search">
+                <input type="text" placeholder="Search..">
             <button class="btn btn-outline-success" type="submit"><a class="search-btn">Search</a></button>
             </form>
         </div>
@@ -45,7 +45,7 @@
             <button class="btn btn-primary mb-2 nav-btn"><a href="/users"><i class="fa fa-user"></i>User</a></button>
             <button class="btn btn-primary mb-2 nav-btn"><a href="/settings"><i class="fa fa-gears"></i>Settings</a></button>
         </nav>
-         
+
         {{-- main content --}}
         <main>
 			{{-- back button --}}
@@ -53,7 +53,7 @@
                 <button class="btn" id="back" onclick="history.back()"><i class="fa fa-chevron-left"></i></button>
             @endif
             @yield('content')
-          
+            
         </main>
 
     </div>
@@ -77,5 +77,6 @@
             }
         });
     </script>
+    
 </body>
 </html>

@@ -24,34 +24,45 @@ document.addEventListener('DOMContentLoaded', function () {
 			center: 'title'},
 		editable: true,
 		selectable: true,
+
+		TitleFormat: {
+			month: 'long',
+			year:'numeric',
+			day:'numeric',
+			weekday: 'long',
+		},
 		events: [
-			// {
-			// title: 'Start of Revision',
-			// title:'Change Study',
-			// start: '2024-09-18',
-			// end: '2024-09-18',
-		// },
-		// {
-			// title: 'Day 2 data gathering',
-			// start: '2024-09-19',
-			// end: '2024=09-19',
-		// },
-		// {
-			// title: 'Revision and checking with Adviser',
-			// start: '2024-09-24',
-			// end: '2024-09-24',
-		// }
+			{
+			title: 'Start of Revision',
+			title:'Change Study',
+			start: '2024-09-18',
+			end: '2024-09-18',
+		},
 		{
-			groupId: 'blueEvents', // recurrent events in this group move together
-			weekdays: [ 1, 5],
-			startTime: '10:45:00',
-			endTime: '12:45:00'
+			title: 'Day 2 data gathering',
+			start: '2024-09-19',
+			end: '2024=09-19',
+		},
+		{
+			title: 'Revision and checking with Adviser',
+			start: '2024-09-24',
+			end: '2024-09-24',
+		},
+		{
+			 // recurrent events in this group move together
+			daysOfWeek: [ 0 ],
+			color: 'red',
+			display: 'background color',
 		  },
 		  {
-			daysOfWeek: [ 0, 6], // these recurrent events move separately
-			startTime: '11:00:00',
-			endTime: '11:30:00',
-			color: 'red'
+			daysOfWeek: [ 6 ], // these recurrent events move separately
+			color: 'blue'
+		  },
+		  {
+			daysOfWeek:[1,2,3,4,5],
+			title: 'Weekdays',
+			color: 'white',
+			textColor: 'black',
 		  }
 	],
 		eventOverlap: function (stillEvent,movingEvent) {
@@ -71,13 +82,21 @@ document.addEventListener('DOMContentLoaded', function () {
 				endTime: '17:00',
 			}
 		],
-		NowIndicator: true,
-		dateClick: function(info){
-			alert('CLICKED: ' + formatIsoTimeString);
+		eventDidMount: function(info) {
+			if (info.event.extendedProps.status === 'done') {
+		
+			  // Change background color of row
+			  info.el.style.backgroundColor = 'red';
+			}
 		},
-		// eventClick: function(info){
-		// 	alert('.eventModal' + info.events)
+		
+		// NowIndicator: true,
+		// dateClick: function(info){
+		// 	alert('CLICKED: ' + info.dateStr);
 		// },
+		eventClick: function(info){
+			alert('.eventModal' + info.event)
+		},
 		
 		dayMaxEventRows: true,
 		views:{
