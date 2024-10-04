@@ -15,9 +15,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="/favicon.png">
     @if ( !Request::is('events') )
-        @vite(['resources/css/app.css', 'resources/css/style.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
-        @vite(['resources/css/style.css','resources/js/app.js'])
+        @vite(['resources/css/app.css','resources/js/app.js'])
     @endif
     
 
@@ -27,12 +27,8 @@
 
     {{-- header and title --}}
     <header>
-        <h3>Scheduling and Task Management System</h3>
+        <h3>TEst Wrapper</h3>
         <div class="wrapper">
-            <form class="d-flex" role="search" method="GET">
-                <input type="text" placeholder="Search..">
-            <button class="btn btn-outline-success" type="submit"><a class="search-btn">Search</a></button>
-            </form>
         </div>
     </header>
     

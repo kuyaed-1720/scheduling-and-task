@@ -48,7 +48,7 @@
                             @endif
                         </td>
                         <td>{{ $task->priority }}</td>
-                        <td>{{ $task->due }}</td>
+                        <td>{{ date('Y-m-d',strtotime($task->due))}}</td>
                         <td>
                             <form action="{{ route('tasks.edit', $task->id) }}" method="GET" style="display: inline;">
                                 @csrf

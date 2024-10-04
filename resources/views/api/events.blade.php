@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-  <div id="eventModal"></div>
+ 
 @endsection

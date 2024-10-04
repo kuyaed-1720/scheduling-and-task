@@ -80,5 +80,9 @@ class UserController extends Controller
 
         return response()->json(['success' => $success]);
     }
+    public function Signup(Request $request)
+    {
+        
+    }
 
 }

@@ -36,3 +36,6 @@ Route::get('/tasksshow', [TaskController::class, 'tasksshow'])->name('tasks.task
 
 // Settings
 Route::get('/settings', [SettingController::class, 'index'])->name('setting.index');
+
+// Signup
+Route::post('');
