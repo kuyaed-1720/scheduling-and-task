@@ -27,7 +27,7 @@
 
     {{-- header and title --}}
     <header>
-        <h3>TEst Wrapper</h3>
+        <h3>Scheduling and Task Management System</h3>
         <div class="wrapper">
         </div>
     </header>

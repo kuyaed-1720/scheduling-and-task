@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
- <h1> scfx-! check duling </h1>
+ <h1> scheduling and Task Management System </h1>
 @endsection

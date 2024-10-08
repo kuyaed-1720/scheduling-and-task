@@ -3,12 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SettingController;
 
 // Home
-Route::get('/', function () { return view('home'); });
-Route::get('/home', function () { return view('home'); });
+Route::get('/', function () { return view('welcome'); });
+Route::get('/home', function () { return view('signup'); });
 
 // Users
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
@@ -20,9 +21,14 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 // Events
-Route::get('/events', [EventController::class, 'index'])->name('events.index');
-Route::post('/events', [EventController::class, 'store'])->name('events.store');
-Route::get('/api/events', [EventController::class, 'getEvents']);
+// Route::get('/events', [EventController::class, 'index'])->name('events.index');
+// Route::post('/events', [EventController::class, 'store'])->name('events.store');
+// Route::get('/api/events', [EventController::class, 'getEvents']);
+Route::controller(EventController::class)->group(function(){
+  Route::get('/events', [EventController::class, 'index'])->name('events.index');
+  Route::post('/events', [EventController::class, 'store'])->name('events.store');
+  Route::get('/api/events', [EventController::class, 'getEvents']);
+});
 
 // Tasks
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
@@ -38,4 +44,4 @@ Route::get('/tasksshow', [TaskController::class, 'tasksshow'])->name('tasks.task
 Route::get('/settings', [SettingController::class, 'index'])->name('setting.index');
 
 // Signup
-Route::post('');
+Route::get('/signup', [LoginController::class, 'create'])->name('home');

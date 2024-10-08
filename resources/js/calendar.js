@@ -18,26 +18,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// calendar and functions
 	const calendarEl = document.getElementById('calendar');
-	const calendar = new Calendar(calendarEl, {
+	var calendar = new Calendar(calendarEl, {
 		plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
 		initialView: 'dayGridMonth',
+		
 		headerToolbar: {
 			start: 'prev today dayGridMonth',
 			center: 'title',
 			end: 'timeGridWeek timeGridDay listWeek next',
 		},
-		events: [
-			{
-				editable: true,
-				title: 'My Event',
-				start: '2024-09-27',
-				// daysOfWeek: ['1'],
-				backgroundColor: '#cb99c9',
-			}
-		],
+		selectable: true,
+		
+		// select: function (start, end, allDay) {
+		// 	var title = prompt('Event Title:');
+		// 	if (title) {
+		// 		var start = $.fullCalendar.formatDate(start, "Y-MM-DD");
+		// 		var end = $.fullCalendar.formatDate(end, "Y-MM-DD");
+		// 		$.ajax({
+		// 			url: SITEURL + "/fullcalenderAjax",
+		// 			data: {
+		// 				title: title,
+		// 				start: start,
+		// 				end: end,
+		// 				type: 'add'
+		// 			}
+		// 		})
+		// 	}
+		// },
+		eventColor: '#FFB0B0',
+		businessHours: {
+			daysOfWeek: [1, 2, 3, 4, 5],
+			title: this.title,
+			start: '8:00',
+			end: '17:00',
+			backgroundColor:'#4a4947',
+		},
 		dateClick: function (info) {
 			$('#eventModal').modal('show');
-		}
+		},
+		timeZone: 'UTC+8',
+		locale: 'Manila',
 	});
 	calendar.render();
 });
