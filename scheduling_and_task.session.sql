@@ -9,9 +9,6 @@ INSERT INTO tasks (
 		updated_at
 	)
 values (
-<<<<<<< HEAD
-		'Task Ceasear',
-=======
 		'Task 137yu7652',
 		'5y464y6t645t',
 		'high',
@@ -43,7 +40,6 @@ values (
 	),
 	(
 		'Task 835',
->>>>>>> f26d746546ee73d219cef6a9a08c6af65232df4a
 		'rgh  rgrgr',
 		'medium',
 		'2024-06-22',

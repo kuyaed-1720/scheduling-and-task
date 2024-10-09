@@ -8,8 +8,8 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SettingController;
 
 // Home
-Route::get('/', function () { return view('welcome'); });
-Route::get('/home', function () { return view('signup'); });
+Route::get('/', function () { return view('signup'); });
+Route::post('/home', function () { return view('home'); });
 
 // Users
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
@@ -42,6 +42,8 @@ Route::get('/tasksshow', [TaskController::class, 'tasksshow'])->name('tasks.task
 
 // Settings
 Route::get('/settings', [SettingController::class, 'index'])->name('setting.index');
+Route::post('/settings',[SettingController::class, 'store'])->name('settings.store');
 
 // Signup
-Route::get('/signup', [LoginController::class, 'create'])->name('home');
+Route::get('/signup', [LoginController::class, 'create'])->name('signup.create');
+Route::post('/signup', [LoginController::class, 'index'])-> name('signup.index');

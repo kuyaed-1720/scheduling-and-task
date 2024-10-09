@@ -14,16 +14,17 @@
     <header>
       <h3>Signup or Login</h3>
     </header>
-    <div class="px-4">
-      <form action="{{route('home')}}" method="Get">
-        @csrf
-        <div>
-          <i class="bi bi-gear-fill"></i>
-        </div>
-        <input type="text" name="name" id="user-user" placeholder="Enter your name: ">
-          <input type="button" value="Submit">
-      </form>
-    </div>
+  </div>
+  
+  <div class="main-wrapper">
+    <img src="https://newsinfo.inquirer.net/files/2023/06/DENR-LOGO.png" class="logo" alt="DENR" width="350" height="250">
+    <form action="{{route('home')}}" method="POST" class="space">
+      @csrf
+      <input type="text" name="name" id="user-user" placeholder="Enter your name" required><br>
+      <input type="email" name="email" id="#!" placeholder="Enter email" required><br>
+      <input type="password" name="password" id="pwd" placeholder="Enter Password" required><br>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </body>
 </html>

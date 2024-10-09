@@ -27,7 +27,7 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

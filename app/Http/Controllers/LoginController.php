@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 class LoginController extends Controller
 {
@@ -12,7 +13,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        //
+        return view('home');
     }
 
     /**
@@ -33,7 +34,21 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|regex:/^[a-zA-Z0-9]+$/|min:8|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => bcrypt($validatedData['password']),
+        ]);
+
+        return redirect()->route('home')->with('success', 'User created successfully.');
+    
     }
 
     /**
