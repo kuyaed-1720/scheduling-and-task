@@ -91,8 +91,8 @@ class EventController extends Controller
   
              return response()->json($data);
         }
-  
-        return view('events.index');
+        $events = Event::all(['id', 'title', 'start', 'end']);
+        return view('events.index',['events'=> $events]);
     }
  
     /**

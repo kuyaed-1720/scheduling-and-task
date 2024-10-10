@@ -18,8 +18,9 @@
   
   <div class="main-wrapper">
     <img src="https://newsinfo.inquirer.net/files/2023/06/DENR-LOGO.png" class="logo" alt="DENR" width="350" height="250">
-    <form action="{{route('home')}}" method="POST" class="space">
+    <form action="{{route('signup.store')}}" method="POST" class="space">
       @csrf
+      <label for="name"><i class="fa fa-person"></i></label>
       <input type="text" name="name" id="user-user" placeholder="Enter your name" required><br>
       <input type="email" name="email" id="#!" placeholder="Enter email" required><br>
       <input type="password" name="password" id="pwd" placeholder="Enter Password" required><br>

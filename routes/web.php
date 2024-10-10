@@ -6,10 +6,11 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\SignupController;
 
 // Home
 Route::get('/', function () { return view('signup'); });
-Route::post('/home', function () { return view('home'); });
+Route::get('/home', function () { return view('home'); });
 
 // Users
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
@@ -41,9 +42,10 @@ Route::post('/tasks/{task}', [TaskController::class, 'complete'])->name('tasks.c
 Route::get('/tasksshow', [TaskController::class, 'tasksshow'])->name('tasks.tasksshow');
 
 // Settings
-Route::get('/settings', [SettingController::class, 'index'])->name('setting.index');
-Route::post('/settings',[SettingController::class, 'store'])->name('settings.store');
+Route::get('/settings', [SettingController::class, 'index']);
+Route::post('/settings',[SettingController::class, 'store']);
 
 // Signup
 Route::get('/signup', [LoginController::class, 'create'])->name('signup.create');
-Route::post('/signup', [LoginController::class, 'index'])-> name('signup.index');
+Route::post('/signup', [LoginController::class, 'index'])-> name('signup.home');
+Route::post('/', [SignupController::class, 'store'])->name('signup.store');

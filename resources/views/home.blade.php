@@ -5,5 +5,6 @@
 @endsection
 
 @section('content')
- <h1> scheduling and Task Management System </h1>
+ <h1> Scheduling and Task Management System</h1>
+ 
 @endsection

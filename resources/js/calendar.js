@@ -28,38 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
 			end: 'timeGridWeek timeGridDay listWeek next',
 		},
 		selectable: true,
-		
-		// select: function (start, end, allDay) {
-		// 	var title = prompt('Event Title:');
-		// 	if (title) {
-		// 		var start = $.fullCalendar.formatDate(start, "Y-MM-DD");
-		// 		var end = $.fullCalendar.formatDate(end, "Y-MM-DD");
-		// 		$.ajax({
-		// 			url: SITEURL + "/fullcalenderAjax",
-		// 			data: {
-		// 				title: title,
-		// 				start: start,
-		// 				end: end,
-		// 				type: 'add'
-		// 			}
-		// 		})
-		// 	}
-		// },
-		eventColor: '#FFB0B0',
+		eventColor: 'green',
 		businessHours: {
 			daysOfWeek: [1, 2, 3, 4, 5],
 			title: this.title,
 			start: '8:00',
 			end: '17:00',
-			backgroundColor:'#4a4947',
+			backgroundColor: 'red',
 		},
 		dateClick: function (info) {
 			$('#eventModal').modal('show');
 		},
-		timeZone: 'UTC+8',
-		locale: 'Manila',
 	});
-	calendar.render();
+	// calendar.render();
 });
 
 // import { Calendar } from '@fullcalendar/core';
