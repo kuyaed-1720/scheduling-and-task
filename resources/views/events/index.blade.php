@@ -43,36 +43,61 @@
 		</div>
 	</div>
 	<script>
-		document.addEventListener('DOMContentLoaded', function(){
+	document.addEventListener('DOMContentLoaded', function(){
 
-	var calendarEl = document.getElementById('calendar');
-	var calendar = new FullCalendar.Calendar(calendarEl, {
-		headerToolbar: {
-			start: 'prev today dayGridMonth',
-			center: 'title',
-			end: 'timeGridWeek timeGridDay listWeek next',
-		},
-		initialView: 'dayGridMonth',
-		editable: true,
-		events:@json($events),
-		selectable: true,
-		eventColor: 'green',
-		businessHours: {
-			daysOfWeek: [1, 2, 3, 4, 5],
-			title: this.title,
-			start: '8:00',
-			end: '17:00',
+		var calendarEl = document.getElementById('calendar');
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			headerToolbar: {
+				start: 'prev today dayGridMonth',
+				center: 'title',
+				end: 'timeGridWeek timeGridDay listWeek next',
+			},
+			locale: 'en',
 			
-		},
-		daysOfWeek:[0],
-			Color: 'red',
+			initialView: 'dayGridMonth',
+			editable: true,
+			events: @json($events),
+			selectable: true,
+			eventColor: 'green',
+			businessHours: { 
+				daysOfWeek: [1, 2, 3, 4, 5],
+				title: this.title,
+				start: '8:00',
+				end: '17:00',
+			},
+			selectAllow: function(selectInfo){
+				var day = selectInfo.start.getUTCDay();
+				if (day === 6 || day === 5){
+					
+					return false;
+				}
+				return true;
+			},
+			eventDrop: function(info){
+				var day = info.event.start.getUTCDay();
+				if (day === 6 || day === 5){
+					info.revert();
+				}
+			},
+			eventReceive: function(info){
+				var day = info.event.start.getUTCDay();
+				if (day === 6 || day === 5){
+					info.revert();
+				}
+			},
+			eventClick: function(info){
+				info.event.remove();
+			},
 			dateClick: function (info) {
-			$('#eventModal').modal('show');
-		},
+				var day = info.date.getUTCDay();
+				if (day != 6 && day != 5){
+					$('#eventModal').modal('show');
+				}
+			},
+			weekends: true,
+		});
+		calendar.render();
+	 
 	});
-	calendar.render();
- 
-});
-
 	</script>
 @endsection

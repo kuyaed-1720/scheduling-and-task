@@ -40,10 +40,6 @@ main {
 	position: relative;
 }
 
-.bi{
-	color:blue;
-}
-
 header {
 	height: 8%;
 	width: 100%;
@@ -91,36 +87,25 @@ header {
 	border-radius: 25px;
 	text-decoration: dotted;
 }
+
 .main-wrapper{
 	box-sizing: content-box;
 	margin-top: 5%;
 	background-color: black;
 	margin-left: 16%;
 	margin-right: 16%;
-	border-radius: 15px;
+	border-radius: 5px;
 }
 
 .space{
 	margin-top: 5%;
 	padding-bottom: 15%;
+	text-align: center;
 }
 
-.nav-btn {
-	width: fit-content;
-}
-
-.search-btn {
-	display: inline;
-	flex-direction: row;
-	justify-content: center;
-
-}
-
-#back {
-	position: absolute;
-	top: 1%;
-	left: 1%;
-	border-radius: 10%;
+.contents{
+	text-align: center;
+	color: red;
 }
 
 .logo{

@@ -1,76 +1,12 @@
 <?php
 
-// namespace App\Http\Controllers;
-
-// use Illuminate\Http\Request;
-// use App\Models\Event;
-
-// class EventController extends Controller
-// {
-// 	public function index()
-//     {
-//         $events = Event::all();
-//         return view('events.index', compact('events'));
-//     }
-
-//     public function getEvents()
-//     {
-//         $events = Event::all();
-//         return response()->json($events);
-//     }
-
-
-//     public function store(Request $request)
-//     {
-//         $request->validate([
-//             'title' => 'required|max:255',
-//             'start' => 'required|max:255',
-//             'end' => 'max:255',
-//         ]);
-
-//         Event::create([
-//             'title' => $request->input('title'),
-//             'start' => $request->input('start'),
-//             'end' => $request->input('end'),
-//         ]);
-
-//         return redirect()->route('events.index')->with('success', 'Event created successfully!');
-//     }
-
-//     public function edit(Event $event)
-//     {
-//         return view('events.edit', compact('events'));
-//     }
-
-//     public function update(Request $request, Event $event)
-//     {
-//         $request->validate([
-//             'title' => 'required|max:255',
-//             'start' => 'required|max:255',
-//             'end' => 'max:255',
-//         ]);
-
-//         $event->update([
-//             'title' => $request->input('title'),
-//             'start' => $request->input('start'),
-//             'end' => $request->input('end'),
-//         ]);
-
-//         return redirect()->route('events.index')->with('success', 'Event updated successfully!');
-//     }
-
-//     public function destroy(Event $event)
-//     {
-//         $event->delete();
-
-//         return redirect()->route('events.index')->with('success', 'Event deleted successfully!');
-//     }
-
-// }
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\Task;
+
+use DateTimeZone;
 use Illuminate\Http\JsonResponse;
   
 class EventController extends Controller
@@ -92,7 +28,14 @@ class EventController extends Controller
              return response()->json($data);
         }
         $events = Event::all(['id', 'title', 'start', 'end']);
-        return view('events.index',['events'=> $events]);
+        if ($request->ajax()) {
+            
+            $taskdata = Task::whereDate('due', '>=', $request->due)
+                        ->get(['id', 'title', 'description', 'priority', 'due']);
+                        return response()->json($taskdata);
+        }
+        $tasks = Task:: all(['id', 'title', 'description', 'priority', 'due']);
+        return view('events.index',['events'=> $events, 'tasks'=> $tasks]);
     }
  
     /**
@@ -141,15 +84,25 @@ class EventController extends Controller
             $request->validate([
                 'title' => 'required|max:255',
                 'start' => 'required|max:255',
-                'end' => 'max:255',
+                'end' => 'required|max:255',
             ]);
-    
+                if ($this->isWeekend($request->input('start'))) {
+                    return back();
+                }
+                $start = $request->input('start')." ". date('H:i:s');
+                $end = $request->input('end')." ". date('H:i:s');
             Event::create([
                 'title' => $request->input('title'),
-                'start' => $request->input('start'),
-                'end' => $request->input('end'),
+                'start' => $start,
+                'end' => $end,
             ]);
     
             return redirect()->route('events.index')->with('success', 'Event created successfully!');
+        }
+
+        public function isWeekend($date){
+            $input = date_create_from_format("Y-m-d", $date, new DateTimeZone("Asia/Manila"));
+            $day = $input->format('N');
+            return $day >=6;
         }
 }

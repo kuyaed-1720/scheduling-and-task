@@ -24,7 +24,7 @@
       <input type="text" name="name" id="user-user" placeholder="Enter your name" required><br>
       <input type="email" name="email" id="#!" placeholder="Enter email" required><br>
       <input type="password" name="password" id="pwd" placeholder="Enter Password" required><br>
-      <button type="submit">Submit</button>
+      <button type="submit">Login</button>
     </form>
   </div>
 </body>
