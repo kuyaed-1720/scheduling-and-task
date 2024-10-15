@@ -10,6 +10,7 @@
             {{ session('success') }}
         </div>
     @endif
+	
 	<div id="calendar"></div>
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 	<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -53,10 +54,8 @@
 				end: 'timeGridWeek timeGridDay listWeek next',
 			},
 			locale: 'en',
-			
 			initialView: 'dayGridMonth',
 			editable: true,
-			events: @json($events),
 			selectable: true,
 			eventColor: 'green',
 			businessHours: { 
@@ -64,10 +63,11 @@
 				title: this.title,
 				start: '8:00',
 				end: '17:00',
+				allday:false,
 			},
 			selectAllow: function(selectInfo){
 				var day = selectInfo.start.getUTCDay();
-				if (day === 6 || day === 5){
+				if (day === 5 || day === 6){
 					
 					return false;
 				}
@@ -75,13 +75,13 @@
 			},
 			eventDrop: function(info){
 				var day = info.event.start.getUTCDay();
-				if (day === 6 || day === 5){
+				if (day === 5 || day === 6){
 					info.revert();
 				}
 			},
 			eventReceive: function(info){
 				var day = info.event.start.getUTCDay();
-				if (day === 6 || day === 5){
+				if (day === 5 || day === 6){
 					info.revert();
 				}
 			},
@@ -90,7 +90,7 @@
 			},
 			dateClick: function (info) {
 				var day = info.date.getUTCDay();
-				if (day != 6 && day != 5){
+				if (day != 5 && day != 6){
 					$('#eventModal').modal('show');
 				}
 			},

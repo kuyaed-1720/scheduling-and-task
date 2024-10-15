@@ -16,16 +16,36 @@
     </header>
   </div>
   
-  <div class="main-wrapper">
-    <img src="https://newsinfo.inquirer.net/files/2023/06/DENR-LOGO.png" class="logo" alt="DENR" width="350" height="250">
+  <div class="main-wrapper d-flex flex-column align-items-center">
+    <div>
+      <img src="https://newsinfo.inquirer.net/files/2023/06/DENR-LOGO.png" class="logo" alt="DENR" width="350" height="250">
+    </div>    
     <form action="{{route('signup.store')}}" method="POST" class="space">
       @csrf
-      <label for="name"><i class="fa fa-person"></i></label>
-      <input type="text" name="name" id="user-user" placeholder="Enter your name" required><br>
-      <input type="email" name="email" id="#!" placeholder="Enter email" required><br>
+      <label for="name"><i class="bi bi-person"></i></label>
+      <input type="text" name="name" placeholder="Enter your name" required ><br>
+      <label for="email"><i class="bi bi-envelope-at-fill"></i></label>
+      <input type="email" name="email" placeholder="Enter email" required ><br>
+      <label for="pwd"><i class="bi bi-eye-slash" onclick="Toggle()" id="eye"></i></label>
       <input type="password" name="password" id="pwd" placeholder="Enter Password" required><br>
       <button type="submit">Login</button>
     </form>
   </div>
 </body>
+<script>
+  function Toggle() {
+            let temp = document.getElementById("pwd");
+            let eye = document.getElementById("eye");
+            if (temp.type === "password") {
+                temp.type = "text";
+                eye.classList.add("bi-eye");
+                eye.classList.remove("bi-eye-slash");
+            }
+            else {
+                temp.type = "password";
+                eye.classList.add("bi-eye-slash");
+                eye.classList.remove("bi-eye");
+            }
+        }
+</script>
 </html>

@@ -103,6 +103,6 @@ class EventController extends Controller
         public function isWeekend($date){
             $input = date_create_from_format("Y-m-d", $date, new DateTimeZone("Asia/Manila"));
             $day = $input->format('N');
-            return $day >=6;
+            return $day >=0;
         }
 }

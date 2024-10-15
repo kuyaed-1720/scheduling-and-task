@@ -29,7 +29,6 @@
     <header>
         <h3>Scheduling and Task Management System</h3>
     </header>
-    
     <div class="main">
         {{-- navigation panel --}}
         <nav class="sidebar">

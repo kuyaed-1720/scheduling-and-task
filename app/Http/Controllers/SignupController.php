@@ -18,9 +18,14 @@ class SignupController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('pwd'),
+        ]);
+        return redirect()->route('home')->with('success', 'Account Created Successfully');
     }
 
     /**
@@ -30,7 +35,7 @@ class SignupController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required ',
             'password' => 'required',
         ]);
 

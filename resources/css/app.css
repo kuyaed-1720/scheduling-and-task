@@ -91,7 +91,7 @@ header {
 .main-wrapper{
 	box-sizing: content-box;
 	margin-top: 5%;
-	background-color: black;
+	background-color: rgb(165, 163, 163);
 	margin-left: 16%;
 	margin-right: 16%;
 	border-radius: 5px;
@@ -99,8 +99,9 @@ header {
 
 .space{
 	margin-top: 5%;
-	padding-bottom: 15%;
+	padding-bottom: 5%;
 	text-align: center;
+	width: max-content;
 }
 
 .contents{
@@ -112,6 +113,7 @@ header {
 	position: relative;
 	border-radius: 10%;
 	border: hidden;
+	margin-top: 55px;
 }
 
 #calendar {
@@ -122,4 +124,3 @@ header {
 	margin: 15px;
 	font-family: 'Times New Roman', Times, serif;
 }
-

@@ -28,23 +28,3 @@ values (
 		now(),
 		now()
 	),
-	(
-		'Task 345',
-		'fefg',
-		'low',
-		'2024-08-24',
-		0,
-		null,
-		now(),
-		now()
-	),
-	(
-		'Task 835',
-		'rgh  rgrgr',
-		'medium',
-		'2024-06-22',
-		1,
-		'2024-06-23',
-		now(),
-		now()
-	)

@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SignupController;
+use App\Http\Controllers\TaskController_2;
 
 // Home
 Route::get('/', function () { return view('signup'); });
@@ -22,9 +23,6 @@ Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 // Events
-// Route::get('/events', [EventController::class, 'index'])->name('events.index');
-// Route::post('/events', [EventController::class, 'store'])->name('events.store');
-// Route::get('/api/events', [EventController::class, 'getEvents']);
 Route::controller(EventController::class)->group(function(){
   Route::get('/events', [EventController::class, 'index'])->name('events.index');
   Route::post('/events', [EventController::class, 'store'])->name('events.store');
@@ -32,6 +30,7 @@ Route::controller(EventController::class)->group(function(){
 });
 
 // Tasks
+
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
@@ -46,6 +45,8 @@ Route::get('/settings', [SettingController::class, 'index']);
 Route::post('/settings',[SettingController::class, 'store']);
 
 // Signup
-Route::get('/signup', [LoginController::class, 'create'])->name('signup.create');
-Route::post('/signup', [LoginController::class, 'index'])-> name('signup.home');
-Route::post('/', [SignupController::class, 'store'])->name('signup.store');
+Route::get('/signup', [SignupController::class, 'create'])->name('signup.create');
+Route::post('/signup', [SignupController::class, 'index'])-> name('signup.home');
+Route::post('/home', [SignupController::class, 'store'])->name('signup.store');
+
+//logout

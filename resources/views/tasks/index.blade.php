@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h1>Task List</h1>
+    {{-- <h1>Task List</h1>
 
     {{-- show success notif --}}
     @if (session('success'))
@@ -14,8 +14,7 @@
         </div>
     @endif
 
-    {{-- Task container --}}
-    <div class="container">
+    <div class="container container-fluid"> 
         <form action="{{ route('tasks.create') }}" method="GET" style="display: inline;">
             @csrf
             @method('GET')
@@ -72,4 +71,5 @@
             </tbody>
         </table>
     </div>
+    
 @endsection
