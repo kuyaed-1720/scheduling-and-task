@@ -7,7 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SignupController;
-use App\Http\Controllers\TaskController_2;
+
 
 // Home
 Route::get('/', function () { return view('signup'); });
