@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{ $task->title }}</td>
                     <td>{{ $task->description }}</td>
-                    <td>{{ date('Y-m-d',strtotime($task->completed_at)) }}</td>
+                    <td>{{ date('d/m/Y',strtotime($task->completed_at)) }}</td>
                 </tr>
                 @endforeach
             </tbody>

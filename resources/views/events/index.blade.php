@@ -67,7 +67,7 @@
 			},
 			selectAllow: function(selectInfo){
 				var day = selectInfo.start.getUTCDay();
-				if (day === 5 || day === 6){
+				if (day === 6 || day === 5){
 					
 					return false;
 				}
@@ -75,7 +75,7 @@
 			},
 			eventDrop: function(info){
 				var day = info.event.start.getUTCDay();
-				if (day === 5 || day === 6){
+				if (day === 6 || day === 5){
 					info.revert();
 				}
 			},

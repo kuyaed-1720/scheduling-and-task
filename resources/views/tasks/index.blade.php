@@ -28,11 +28,12 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th class="bg-secondary">Title</th>
-                    <th class="bg-secondary">Description</th>
-                    <th class="bg-secondary">Priority</th>
-                    <th class="bg-secondary">Due</th>
-                    <th class="bg-secondary">Action</th>
+                    <th class="bg-secondary"style="text-align: center">Title</th>
+                    <th class="bg-secondary" style="text-align: center">Description</th>
+                    <th class="bg-secondary"style="text-align: center">Priority</th>
+                    <th class="bg-secondary"style="text-align: center">Due Date</th>
+                    <th class="bg-secondary"style="text-align: center">Time</th>
+                    <th class="bg-secondary"style="text-align: center">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,6 +49,7 @@
                         </td>
                         <td>{{ $task->priority }}</td>
                         <td>{{ date('d/m/Y',strtotime($task->due))}}</td>
+                        <td>{{ $task->local_created_at }}</td>
                         <td>
                             <form action="{{ route('tasks.edit', $task->id) }}" method="GET" style="display: inline;">
                                 @csrf

@@ -11,8 +11,9 @@ class TaskController extends Controller
     {
         $tasks = Task::where('completed', false)->orderBy('priority', 'desc')->orderBy('due')->get();
         foreach ($tasks as $task) {
-            $task->local_created_at = $task->created_at->timezone('Asia/Manila')->format('d/m/Y H:i:s');
-            $task->local_updated_at = $task->updated_at->timezone('Asia/Manila')->format('d/m/Y H:i:s');
+            $task->local_created_at = $task->created_at->timezone('Asia/Manila')->format('m/d/Y H:i:s');
+            $task->local_updated_at = $task->updated_at->timezone('Asia/Manila')->format('m/d/Y H:i:s');
+            // $task->local_due_date = $task->due_date->timezone('Asia/Manila')->format('m/d/Y');
         }
         return view('tasks.index', compact('tasks'));
     }

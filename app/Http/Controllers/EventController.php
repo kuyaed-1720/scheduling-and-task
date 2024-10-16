@@ -89,8 +89,8 @@ class EventController extends Controller
                 if ($this->isWeekend($request->input('start'))) {
                     return back();
                 }
-                $start = $request->input('start')." ". date('H:i:s');
-                $end = $request->input('end')." ". date('H:i:s');
+                $start = $request->input('start')." ". date('d/m/Y H:i:s');
+                $end = $request->input('end')." ". date('d/m/Y H:i:s');
             Event::create([
                 'title' => $request->input('title'),
                 'start' => $start,
@@ -101,8 +101,8 @@ class EventController extends Controller
         }
 
         public function isWeekend($date){
-            $input = date_create_from_format("Y-m-d", $date, new DateTimeZone("Asia/Manila"));
-            $day = $input->format('N');
+            $input = date_create_from_format("d/m/Y", $date, new DateTimeZone("Asia/Manila"));
+            $day = $input->format('d/m/Y');
             return $day >=0;
         }
 }

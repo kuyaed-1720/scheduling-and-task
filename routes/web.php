@@ -42,7 +42,7 @@ Route::get('/tasksshow', [TaskController::class, 'tasksshow'])->name('tasks.task
 
 // Settings
 Route::get('/settings', [SettingController::class, 'index']);
-Route::post('/settings',[SettingController::class, 'store']);
+
 
 // Signup
 Route::get('/signup', [SignupController::class, 'create'])->name('signup.create');

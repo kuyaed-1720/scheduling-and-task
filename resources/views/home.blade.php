@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
- 
+        <h1>Helio Aqua Leo</h1>
 @endsection
