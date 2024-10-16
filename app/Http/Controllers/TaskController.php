@@ -10,7 +10,10 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::where('completed', false)->orderBy('priority', 'desc')->orderBy('due')->get();
-
+        foreach ($tasks as $task) {
+            $task->local_created_at = $task->created_at->timezone('Asia/Manila')->format('d/m/Y H:i:s');
+            $task->local_updated_at = $task->updated_at->timezone('Asia/Manila')->format('d/m/Y H:i:s');
+        }
         return view('tasks.index', compact('tasks'));
     }
 
@@ -82,7 +85,10 @@ class TaskController extends Controller
     public function tasksshow()
     {
         $completedTasks = Task::where('completed', true)->orderBy('completed_at', 'desc')->get();
-
+        foreach ($completedTasks as $completedTask) {
+            $completedTask->local_created_at = $completedTask->created_at->timezone('Asia/Manila')->format('d/m/Y H:i:s');
+            $completedTask->local_updated_at = $completedTask->updated_at->timezone('Asia/Manila')->format('d/m/Y H:i:s');
+        }
         return view('tasks.tasksshow', compact('completedTasks'));
     }
 }

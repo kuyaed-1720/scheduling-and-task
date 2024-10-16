@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    {{-- <h1>Task List</h1>
+    <h1>Task List</h1>
 
     {{-- show success notif --}}
     @if (session('success'))
@@ -47,7 +47,7 @@
                             @endif
                         </td>
                         <td>{{ $task->priority }}</td>
-                        <td>{{ date('Y-m-d',strtotime($task->due))}}</td>
+                        <td>{{ date('d/m/Y',strtotime($task->due))}}</td>
                         <td>
                             <form action="{{ route('tasks.edit', $task->id) }}" method="GET" style="display: inline;">
                                 @csrf
